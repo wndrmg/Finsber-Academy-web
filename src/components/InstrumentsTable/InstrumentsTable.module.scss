@@ -1,0 +1,11 @@
+.instrumentsList {
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    overflow: auto;
+}
+
+.instrument {
+    display: flex;
+}

@@ -1,0 +1,22 @@
+{
+  "exclude": [
+    "/(node_modules|bower_components)/",
+    "/src\/adapters(.+)\/build(.+)?/",
+    "/monero_utils\/MyMoneroCoreCpp_ASMJS.asm.js/",
+    "/monero_utils\/MyMoneroCoreCpp_ASMJS.wasm/"
+  ],
+  "presets": [
+    "@babel/preset-typescript",
+    "@babel/preset-react",
+    ["@babel/preset-env", {
+      "useBuiltIns": "usage",
+      "corejs": {
+        "version": "3.15",
+        "proposals": true
+      }
+    }]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+  ]
+}
