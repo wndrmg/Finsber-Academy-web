@@ -6,7 +6,6 @@
     "start": "cross-env WEBPACK_IS_DEV_SERVER=true NODE_ENV=development webpack serve --config webpack.config.babel.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js",
     "release": "npm version patch",
-    "update-hooks": "npx simple-git-hooks",
     "prerelease": "npm run update-hooks",
     "postinstall": "npm run update-hooks"
   },
