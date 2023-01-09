@@ -76,6 +76,7 @@ module.exports = {
         'prefer-promise-reject-errors': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/indent': ["error", 4],
-        'object-curly-spacing': 'off'
+        'object-curly-spacing': 'off',
+        '@typescript-eslint/no-unused-vars': 'off'
     },
 };

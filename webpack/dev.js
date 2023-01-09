@@ -12,4 +12,5 @@ export default {
     infrastructureLogging: {
         level: 'error',
     },
+    stats: 'errors-only',
 };

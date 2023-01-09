@@ -16,6 +16,9 @@ export default {
     target: isDevServer ? 'web' : ['web', 'es5'],
     mode: isProd ? 'production' : 'development',
     entry,
+    stats: {
+        logging: 'error',
+    },
     output: {
         path: path.join(__dirname, '../dist'),
         publicPath: isDevServer ? undefined : './',
