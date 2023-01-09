@@ -5,9 +5,7 @@
   "scripts": {
     "start": "cross-env WEBPACK_IS_DEV_SERVER=true NODE_ENV=development webpack serve --config webpack.config.babel.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js",
-    "release": "npm version patch",
-    "prerelease": "npm run update-hooks",
-    "postinstall": "npm run update-hooks"
+    "release": "npm version patch"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
