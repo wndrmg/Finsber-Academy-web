@@ -16,7 +16,7 @@ export const App = () => {
                     <h1>
                         Курсы по финансам и&nbsp;инвестициям
                     </h1>
-                    <ReactSVG className='top-banner-pic' src="top-banner.svg" />
+                    <ReactSVG className='top-banner-pic' src="covers/top-banner.svg" />
                     <p>
                         Научитесь управлять своими финансами. 
                         Узнайте, как наращивать капитал и получать дополнительный доход за счет инвестиций
@@ -29,33 +29,41 @@ export const App = () => {
                             Все курсы
                         </h2>
                         <div className='cources-list-item'>
-                            <div className='item-cover'>
+                            <div className='item-cover' style={{  
+                                backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',
+                                backgroundPosition: 'center, bottom',
+                                backgroundRepeat: 'no-repeat'
+                            }}>
                                 <div className='item-badge'>
-                                    Начинающим
+                                    <span>Начинающим</span>
                                 </div>
                             </div>
                             <div className='item-description'>
-                                <h3>
+                                <h3 className='item-title'>
                                     Как привести личные финансы в порядок
                                 </h3>
-                                <p>
+                                <div className='item-lessons-number'>
                                     5 уроков
-                                </p>
+                                </div>
                             </div>
                         </div>
-                        <div className='cources-list-item'>
-                            <div className='item-cover'>
+                        <div className='cources-list-item inactive'>
+                            <div className='item-cover' style={{  
+                                backgroundImage: 'url(' + 'covers/fire-investments.svg' + ')',
+                                backgroundPosition: 'center, bottom',
+                                backgroundRepeat: 'no-repeat'
+                            }}>
                                 <div className='item-badge'>
-                                    Начинающим
+                                    <span>Начинающим</span>
                                 </div>
                             </div>
                             <div className='item-description'>
                                 <h3>
                                     Как выйти на пенсию раньше. FIRE-инвестиции
                                 </h3>
-                                <p>
+                                <div className='item-lessons-number'>
                                     6 уроков
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
