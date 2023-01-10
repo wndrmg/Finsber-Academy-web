@@ -1,10 +1,8 @@
 .App {
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-height: 100vh;
-  padding: 30px;
-
 }
 .online {
   position: absolute;
@@ -17,4 +15,70 @@
   &_true{
     background: #04e525;
   }
+}
+.button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button-blue {
+  background: #2963ff;
+  color: #fff;
+  &:hover {
+    background:#3e72ff;
+  }
+}
+.header {
+  padding: 10px 0;
+}
+.top-banner {
+  background: #f2f4fc;
+  padding: 40px 20px;
+  
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: 28px;
+    }
+
+    p {
+      margin: 20px 0 40px 0;
+      font-size: 15px;
+    }
+}
+.cources-list {
+  padding: 40px 20px;
+
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 24px;
+    }
+
+    .cources-list-item {
+      height: 250px;
+      border: 1px solid #f0f0f0;
+      border-radius: 6px;
+      box-shadow: 0 3px 15px #f0f0f0;
+      margin: 0 0 20px 0;
+
+      h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .item-cover {
+        position: relative;
+      }
+      
+      .item-badge {
+        position: absolute;
+        background: #eaf0fe;
+        
+      }
+
+    }
 }
