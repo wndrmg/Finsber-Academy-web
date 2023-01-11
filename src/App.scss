@@ -36,8 +36,10 @@
       font-size: 15px;
     }
 }
-.cources-list {
+.main-content {
   padding: 40px 20px;
+}
+.cources-list {
   display: flex;
   flex-direction: column;
 
@@ -185,6 +187,21 @@
       }
     }
   }
+  .main-content {
+    width: 728px;
+    margin: 0 auto;
+  }
+  .cources-list {
+    flex-direction: row;
+    
+
+    .cources-list-item {
+      width: 50%;
+    }
+    .cources-list-item:not(.cources-list-item:last-child) {
+      margin-right: 20px;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -205,5 +222,9 @@
         width: 45%;
       }
     }
+  }
+
+  .main-content {
+    width: 984px;
   }
 }
