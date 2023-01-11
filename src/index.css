@@ -1,5 +1,6 @@
 body {
     min-height: 100vh;
+    min-width: 240px;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto',
         'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
@@ -8,6 +9,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: #fff;
     color: #212730;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
 }
 
 code {
