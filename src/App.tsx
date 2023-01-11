@@ -1,6 +1,5 @@
 import './App.scss';
 import { ReactSVG } from 'react-svg';
-
 import classNames from 'classnames';
 import React from 'react';
 
