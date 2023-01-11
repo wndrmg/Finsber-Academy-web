@@ -8,7 +8,9 @@ export const App = () => {
     return (
         <div className="App">
             <header className='header'>
-                <ReactSVG className='header-logo' src="logo.svg" />
+                <div className='header-inner'>
+                    <ReactSVG className='header-logo' src="logo.svg" />
+                </div>
             </header>
             <main>
                 <div className='top-banner'>
