@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 
 export const TopBanner = () => {
@@ -13,9 +14,11 @@ export const TopBanner = () => {
                     Научитесь управлять своими финансами. 
                     Узнайте, как наращивать капитал и получать дополнительный доход за счет инвестиций
                 </p>
-                <button className='button button-blue'>
-                    Скачать приложение
-                </button>
+                <Link to='/courses'>
+                    <button className='button button-blue'>
+                        Смотреть все курсы
+                    </button>
+                </Link>
             </div>
         </div>
     )

@@ -14,8 +14,8 @@ export const App = () => {
     
     return (
         <div className="App">
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Routes>
                     <Route path="/" element={
                         <main>
