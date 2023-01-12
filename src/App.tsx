@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     BrowserRouter,
     Routes,
     Route,
+    useLocation
 } from 'react-router-dom';
 
 import { Header } from './components/Header';
@@ -10,11 +11,22 @@ import { TopBanner } from './components/TopBanner';
 import { CoursesList } from './components/CoursesList';
 import './App.scss';
 
+export const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    
+    return null;
+}
+
 export const App = () => {
     
     return (
         <div className="App">
             <BrowserRouter>
+                <ScrollToTop />
                 <Header />
                 <Routes>
                     <Route path="/" element={
@@ -34,7 +46,7 @@ export const App = () => {
                         </main>
                     } 
                     />
-                    <Route path="*" element={ <h1>Страница не найдена</h1> } />
+                    <Route path="/*" element={ <h1>Страница не найдена</h1> } />
                 </Routes>
             </BrowserRouter>
         </div>

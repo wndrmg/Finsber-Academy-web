@@ -14,7 +14,7 @@ export const TopBanner = () => {
                     Научитесь управлять своими финансами. 
                     Узнайте, как наращивать капитал и получать дополнительный доход за счет инвестиций
                 </p>
-                <Link to='/courses'>
+                <Link to='courses'>
                     <button className='button button-blue'>
                         Смотреть все курсы
                     </button>
