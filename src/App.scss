@@ -44,6 +44,14 @@
       font-size: 15px;
       line-height: 21px;
     }
+
+    .item-lessons-number {
+      padding: 16px;
+      width: 30%;
+      background: #d7deeb;
+      margin: 0 auto 40px auto;
+      border-radius: 6px;
+    }
 }
 .main-content {
   padding: 40px 20px;
@@ -170,7 +178,7 @@ main .back-link {
   background: none;
   border: 1px solid #2963ff;
 }
-
+//adaptive
 @media (min-width: 425px) {
   .page-hero {
     .page-hero-inner {
@@ -179,6 +187,9 @@ main .back-link {
     }
     .button {
       width: 250px;
+    }
+    .item-lessons-number {
+      max-width: 80px;
     }
   }
 }
@@ -217,6 +228,11 @@ main .back-link {
         right: 0;
         width: 50%;
       }
+
+      .item-lessons-number {
+        margin: 0 0 40px 0;
+        text-align: center;
+      }
     }
   }
   .main-content {
@@ -250,7 +266,7 @@ main .back-link {
       }
 
       p {
-        margin: 40px 0 112px 0;
+        margin: 40px 0 40px 0;
         width: 45%;
       }
     }
