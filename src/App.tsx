@@ -1,28 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     BrowserRouter,
     Routes,
     Route,
-    useLocation,
-    Outlet
 } from 'react-router-dom';
 
 import './App.scss';
-import { Header } from './components/Header';
-import { PageHero } from './components/PageHero';
-import { CoursesList } from './components/CoursesList';
-import { CourseItem } from './components/CourseItem';
-import { Footer } from './components/Footer';
+import { Header } from '@components/Header';
+import { PageHero } from '@components/PageHero';
+import { CoursesList } from '@components/CoursesList';
+import { CourseItem } from '@components/CourseItem';
+import { Footer } from '@components/Footer';
+import {ScrollToTop} from '@src/hooks/ScrollToTop/ScrollToTop';
 
-export const ScrollToTop = () => {
-    const { pathname } = useLocation();
-    
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-    
-    return null;
-}
 
 export const App = () => {
     
