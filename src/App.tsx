@@ -3,13 +3,15 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    useLocation
+    useLocation,
+    Outlet
 } from 'react-router-dom';
 
+import './App.scss';
 import { Header } from './components/Header';
 import { TopBanner } from './components/TopBanner';
 import { CoursesList } from './components/CoursesList';
-import './App.scss';
+import { CourseItem } from './components/CourseItem';
 
 export const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -29,7 +31,7 @@ export const App = () => {
                 <ScrollToTop />
                 <Header />
                 <Routes>
-                    <Route path="/" element={
+                    <Route path='/' element={
                         <main>
                             <TopBanner />
                             <div className='main-content'>
@@ -38,7 +40,15 @@ export const App = () => {
                         </main>
                     } 
                     />
-                    <Route path="courses" element={
+                    <Route path="/courses/item" element={
+                        <main>
+                            <div className='main-content'>
+                                <CourseItem />
+                            </div>
+                        </main>
+                    } 
+                    />
+                    <Route path="/courses" element={
                         <main>
                             <div className='main-content'>
                                 <CoursesList />

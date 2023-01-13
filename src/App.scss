@@ -39,7 +39,7 @@
 .main-content {
   padding: 40px 20px;
 }
-.courses-list-inner {
+.courses-list-inner, .course-header-inner {
   display: flex;
   flex-direction: column;
 
@@ -53,7 +53,7 @@
       color: #212730;
     }
 
-    .courses-list-item {
+    .courses-list-item-inner, .course-header-item {
       text-align: left;
       height: 300px;
       border-radius: 6px;
