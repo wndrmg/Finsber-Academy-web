@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
 export const CoursesList = () => {
     return (
@@ -11,7 +11,7 @@ export const CoursesList = () => {
                 <div className='courses-list-inner'>
                     
                     <div className='courses-list-item'>
-                        <a href='courses/item'>
+                        <Link to='/courses/item'>
                             <div className='courses-list-item-inner'>
                                 <div className='item-cover' style={{  
                                     backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',
@@ -31,7 +31,7 @@ export const CoursesList = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className='courses-list-item'>
                         <div className='courses-list-item-inner inactive'>

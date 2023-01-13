@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,17 +14,24 @@
   font-weight: 600;
   cursor: pointer;
 }
-.header {
+.header, footer {
   display: flex;
 
-  .header-logo {
+  .header-logo, .footer-logo {
     margin: 10px 20px;
     width: 161px;
   }
+  .footer-logo {
+    opacity: 50%;
+  }
 }
-.top-banner {
+.page-hero {
   background: #f2f4fc;
   padding: 40px 20px;
+
+    .page-hero-inner {
+      text-align: center;
+    }
   
     h1 {
       margin: 0 0 20px 0;
@@ -32,8 +39,9 @@
     }
 
     p {
-      margin: 20px 0 40px 0;
+      margin: 20px 0 35px 0;
       font-size: 15px;
+      line-height: 21px;
     }
 }
 .main-content {
@@ -100,6 +108,22 @@
 
     }
 }
+main .back-link {
+  text-align: left;
+  margin: -20px 0 30px 0;
+  a {
+    text-decoration: none;
+    color: #212730;
+    font-size: 14px;
+    
+    &:hover {
+      color: #737475;;
+    }
+    &::before {
+      content: '< ';
+    }
+  }
+}
 //style modifiers
 .button-blue {
   background: #2963ff;
@@ -140,8 +164,8 @@
 }
 
 @media (min-width: 425px) {
-  .top-banner {
-    .top-banner-inner {
+  .page-hero {
+    .page-hero-inner {
       width: 75%;
       margin: 0 auto;
     }
@@ -153,15 +177,15 @@
 
 @media (min-width: 768px) {
   
-  .header-inner {
+  .header-inner, .footer-inner {
     width: 768px;
     margin: 0 auto;
   }
 
-  .top-banner {
+  .page-hero {
     padding: 60px 20px;
 
-    .top-banner-inner {
+    .page-hero-inner {
       width: 728px;
       margin: 0 auto;
       text-align: left;
@@ -175,13 +199,13 @@
       p {
         width: 50%;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 23px;
         margin: 30px 0 40px 0;
       }
 
-      .top-banner-pic {
+      .page-hero-pic {
         position: absolute;
-        top: 0;
+        bottom: 0;
         right: 0;
         width: 50%;
       }
@@ -205,12 +229,12 @@
 }
 
 @media (min-width: 1024px) {
-  .header-inner {
+  .header-inner, .footer-inner {
     width: 1024px;
   }
 
-  .top-banner {
-    .top-banner-inner {
+  .page-hero {
+    .page-hero-inner {
       width: 984px;
 
       h1 {

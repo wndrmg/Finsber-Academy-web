@@ -9,9 +9,10 @@ import {
 
 import './App.scss';
 import { Header } from './components/Header';
-import { TopBanner } from './components/TopBanner';
+import { PageHero } from './components/PageHero';
 import { CoursesList } from './components/CoursesList';
 import { CourseItem } from './components/CourseItem';
+import { Footer } from './components/Footer';
 
 export const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -33,7 +34,7 @@ export const App = () => {
                 <Routes>
                     <Route path='/' element={
                         <main>
-                            <TopBanner />
+                            <PageHero />
                             <div className='main-content'>
                                 <CoursesList />
                             </div>
@@ -42,9 +43,7 @@ export const App = () => {
                     />
                     <Route path="/courses/item" element={
                         <main>
-                            <div className='main-content'>
-                                <CourseItem />
-                            </div>
+                            <CourseItem />
                         </main>
                     } 
                     />
@@ -58,6 +57,7 @@ export const App = () => {
                     />
                     <Route path="/*" element={ <h1>Страница не найдена</h1> } />
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </div>
     );
