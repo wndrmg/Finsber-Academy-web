@@ -6,6 +6,9 @@ export const CourseItem = () => {
     return (
         <div className='page-hero'>
             <div className='page-hero-inner'>
+                <div className='item-badge bordered right'>
+                    <span>Начинающим</span>
+                </div>
                 <div className='back-link'>
                     <Link to='..' relative="path">
                         Назад

@@ -31,6 +31,7 @@
 
     .page-hero-inner {
       text-align: center;
+      position: relative;
     }
   
     h1 {
@@ -92,21 +93,19 @@
             font-size: 15px;
           }
       }
-      
-      .item-badge {
-        position: absolute;
-        background: #eaf0fe;
-        padding: 7px 15px;
-        line-height: 12px;
-        border-radius: 6px 0 0 0;
-
-        span {
-          font-size: 12px;
-          color: #2963ff;
-        }
-      }
-
     }
+}
+.item-badge {
+  position: absolute;
+  background: #eaf0fe;
+  padding: 7px 15px;
+  line-height: 12px;
+  border-radius: 6px 0 0 0;
+
+  span {
+    font-size: 12px;
+    color: #2963ff;
+  }
 }
 main .back-link {
   text-align: left;
@@ -161,6 +160,15 @@ main .back-link {
   display: block;
   width: 100%;
   height: 100%;
+}
+.right {
+  right: 0;
+  top: 0;
+  border-radius: 6px;
+}
+.bordered {
+  background: none;
+  border: 1px solid #2963ff;
 }
 
 @media (min-width: 425px) {
