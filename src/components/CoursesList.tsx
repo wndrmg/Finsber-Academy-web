@@ -8,11 +8,10 @@ export const CoursesList = () => {
                 <h2>
                     Все курсы
                 </h2>
-                <div className='courses-list-inner'>
-                    
-                    <div className='courses-list-item'>
+                <div className='list-inner'>
+                    <div className='list-item'>
                         <Link to='/courses/item'>
-                            <div className='courses-list-item-inner'>
+                            <div className='list-item-inner'>
                                 <div className='item-cover' style={{  
                                     backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',
                                     backgroundPosition: 'center, bottom',
@@ -33,8 +32,8 @@ export const CoursesList = () => {
                             </div>
                         </Link>
                     </div>
-                    <div className='courses-list-item'>
-                        <div className='courses-list-item-inner inactive'>
+                    <div className='list-item'>
+                        <div className='list-item-inner inactive'>
                             <div className='item-cover' style={{  
                                 backgroundImage: 'url(' + 'covers/fire-investments.svg' + ')',
                                 backgroundPosition: 'center, bottom',

@@ -56,7 +56,7 @@
 .main-content {
   padding: 40px 20px;
 }
-.courses-list-inner, .course-header-inner {
+.list-inner {
   display: flex;
   flex-direction: column;
 
@@ -70,7 +70,7 @@
       color: #212730;
     }
 
-    .courses-list-item-inner, .course-header-item {
+    .list-item-inner {
       text-align: left;
       height: 300px;
       border-radius: 6px;
@@ -103,6 +103,27 @@
       }
     }
 }
+.lessons-list {
+  .list-inner {
+    .list-item-inner {
+      flex-direction: row;
+      height: auto;
+      min-height: 130px;
+
+      .item-cover {
+        flex-basis: 40%;
+      }
+      .item-description {
+        flex-basis: 60%;
+
+        h3 {
+          font-size: 16px;
+          margin: 0 0 10px 0;
+        }
+      }
+    }
+  }
+}
 .item-badge {
   position: absolute;
   background: #eaf0fe;
@@ -131,6 +152,7 @@ main .back-link {
     }
   }
 }
+
 //style modifiers
 .button-blue {
   background: #2963ff;
@@ -178,6 +200,7 @@ main .back-link {
   background: none;
   border: 1px solid #2963ff;
 }
+
 //adaptive
 @media (min-width: 425px) {
   .page-hero {
@@ -219,7 +242,7 @@ main .back-link {
         width: 50%;
         font-size: 16px;
         line-height: 23px;
-        margin: 30px 0 40px 0;
+        margin: 30px 0 35px 0;
       }
 
       .page-hero-pic {
@@ -239,15 +262,33 @@ main .back-link {
     width: 728px;
     margin: 0 auto;
   }
-  .courses-list-inner {
-    flex-direction: row;
-    
+  .courses-list {
 
-    .courses-list-item {
-      width: 50%;
+    .list-inner {
+      flex-direction: row;
+  
+      .list-item {
+        width: 50%;
+      }
+      .list-item:not(.list-item:last-child) {
+        margin-right: 20px;
+      }
     }
-    .courses-list-item:not(.courses-list-item:last-child) {
-      margin-right: 20px;
+  }
+  .lessons-list {
+
+    .list-inner {
+      flex-direction: column;
+
+      .list-item-inner {
+        
+        .item-cover {
+          flex-basis: 25%;
+        }
+        .item-description {
+          flex-basis: 75%;
+        }
+      }
     }
   }
 }
@@ -266,7 +307,7 @@ main .back-link {
       }
 
       p {
-        margin: 40px 0 40px 0;
+        margin: 40px 0 35px 0;
         width: 45%;
       }
     }
