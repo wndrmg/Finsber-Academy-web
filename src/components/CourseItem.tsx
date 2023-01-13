@@ -24,7 +24,7 @@ export const CourseItem = () => {
                         Что, если мечта зарабатывать и делать это с лёгкостью может стать реальностью? Ведь достаточно только начать учиться у лучших!
                     </p>
                     <div className='item-lessons-number'>
-                        5 уроков
+                        <span>5 уроков</span>
                     </div>
                     <Link to='/courses/item/lesson'>
                         <button className='button button-blue'>

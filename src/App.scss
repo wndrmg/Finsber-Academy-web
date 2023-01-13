@@ -46,11 +46,17 @@
     }
 
     .item-lessons-number {
-      padding: 16px;
-      width: 30%;
-      background: #d7deeb;
+      padding: 15px 16px 16px 16px;
+      width: 112px;
       margin: 0 auto 40px auto;
       border-radius: 6px;
+      background: #d7deeb;
+
+      span {
+        background: url('../public/book-cover.svg') #d7deeb no-repeat top left;
+        background-size: 20px 20px;
+        padding-left: 30px;
+      }
     }
 }
 .main-content {
@@ -163,7 +169,7 @@ main .back-link {
 }
 .inactive {
   position: relative;
-  box-shadow:inset 0px 0px 0px 2px #eaf0fe !important; 
+  box-shadow:inset 0 0 0 2px #eaf0fe !important;
 }
 .inactive::before {
   content: 'Скоро';
@@ -210,9 +216,6 @@ main .back-link {
     }
     .button {
       width: 250px;
-    }
-    .item-lessons-number {
-      max-width: 80px;
     }
   }
 }
