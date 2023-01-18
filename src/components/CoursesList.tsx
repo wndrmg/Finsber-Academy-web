@@ -1,6 +1,7 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 import {useCourses} from '@src/hooks/useCourses/useCourses'
+import {CourseItem} from '@components/CourseItem';
 
 export const CoursesList = () => {
     const {courses, error, loading} = useCourses();
@@ -14,51 +15,9 @@ export const CoursesList = () => {
                 <div className='list-inner'>
                     { loading && <div className="loader"></div> }
                     { error && <div className="error">{error}</div> }
-                    { courses.map(course => course.title) }
-                    <div className='list-item'>
-                        <Link to='/courses/item'>
-                            <div className='list-item-inner'>
-                                <div className='item-cover' style={{  
-                                    backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',
-                                    backgroundPosition: 'center, bottom',
-                                    backgroundRepeat: 'no-repeat'
-                                }}>
-                                    <div className='item-badge'>
-                                        <span>Начинающим</span>
-                                    </div>
-                                </div>
-                                <div className='item-description'>
-                                    <h3 className='item-title'>
-                                        Как привести личные финансы в порядок
-                                    </h3>
-                                    <div className='item-lessons-number'>
-                                        5 уроков
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='list-item'>
-                        <div className='list-item-inner inactive'>
-                            <div className='item-cover' style={{  
-                                backgroundImage: 'url(' + 'covers/fire-investments.svg' + ')',
-                                backgroundPosition: 'center, bottom',
-                                backgroundRepeat: 'no-repeat'
-                            }}>
-                                <div className='item-badge'>
-                                    <span>Начинающим</span>
-                                </div>
-                            </div>
-                            <div className='item-description'>
-                                <h3>
-                                    Как выйти на пенсию раньше. FIRE-инвестиции
-                                </h3>
-                                <div className='item-lessons-number'>
-                                    6 уроков
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    { courses.map(course =>
+                        <CourseItem course={course} key={course.id}/>
+                    ) }
                 </div>
             </div>
             <Outlet />
