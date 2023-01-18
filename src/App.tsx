@@ -9,7 +9,7 @@ import './App.scss';
 import { Header } from '@components/Header';
 import { PageHero } from '@components/PageHero';
 import { CoursesList } from '@components/CoursesList';
-import { CourseItem } from '@components/CourseItem';
+import { CoursePage } from '@components/CoursePage';
 import { Footer } from '@components/Footer';
 import {ScrollToTop} from '@src/hooks/ScrollToTop/ScrollToTop';
 
@@ -33,7 +33,7 @@ export const App = () => {
                     />
                     <Route path="/courses/item" element={
                         <main>
-                            <CourseItem />
+                            <CoursePage />
                         </main>
                     } 
                     />

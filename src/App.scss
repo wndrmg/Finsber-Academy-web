@@ -206,6 +206,29 @@ main .back-link {
   background: none;
   border: 1px solid #2963ff;
 }
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #2963ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.error {
+  margin: 20px 0 20px 0;
+  padding: 10px;
+  border: 2px solid #fd184b;
+  color: #fd184b;
+  font-weight: bold;
+}
 
 //adaptive
 @media (min-width: 425px) {

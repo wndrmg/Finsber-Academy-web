@@ -3,7 +3,7 @@ import axios, {AxiosError} from 'axios'
 import {CourseData} from './model'
 
 export const useCourses = () => {
-    const [courses, setCourses] = useState<CourseData[]>([])
+    const [courses, setCourses] = useState<CourseData>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
@@ -11,7 +11,7 @@ export const useCourses = () => {
         try {
             setError('')
             setLoading(true)
-            const response = await axios.get<CourseData[]>('/api/config')
+            const response = await axios.get<CourseData>('/api/config')
             setCourses(response.data)
             setLoading(false)
         } catch (e: unknown) {

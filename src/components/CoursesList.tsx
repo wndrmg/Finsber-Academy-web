@@ -1,7 +1,10 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
+import {useCourses} from '@src/hooks/useCourses/useCourses'
 
 export const CoursesList = () => {
+    const {courses, error, loading} = useCourses();
+
     return (
         <>
             <div className='courses-list'>
@@ -9,6 +12,9 @@ export const CoursesList = () => {
                     Все курсы
                 </h2>
                 <div className='list-inner'>
+                    { loading && <div className="loader"></div> }
+                    { error && <div className="error">{error}</div> }
+                    { courses.map(course => course.title) }
                     <div className='list-item'>
                         <Link to='/courses/item'>
                             <div className='list-item-inner'>
