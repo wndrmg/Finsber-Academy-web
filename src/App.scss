@@ -275,6 +275,7 @@ main .back-link {
         position: absolute;
         bottom: 0;
         right: 0;
+        height: 100%;
         width: 50%;
       }
 
@@ -335,6 +336,9 @@ main .back-link {
       p {
         margin: 40px 0 35px 0;
         width: 45%;
+        &.page-hero-main {
+          margin: 40px 0 115px 0;
+        }
       }
     }
   }

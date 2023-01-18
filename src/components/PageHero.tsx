@@ -10,7 +10,7 @@ export const PageHero = () => {
                     Курсы по финансам и&nbsp;инвестициям
                 </h1>
                 <ReactSVG className='page-hero-pic' src="covers/top-banner.svg" />
-                <p>
+                <p className='page-hero-main'>
                     Научитесь управлять своими финансами. 
                     Узнайте, как наращивать капитал и получать дополнительный доход за счет инвестиций
                 </p>

@@ -7,12 +7,12 @@ interface CourseItemProps {
 }
 
 export const CourseItem = ({course}: CourseItemProps) => {
-    const isActive = course.lessons.length > 0
+    const isActiveCourse = course.lessons.length > 0
 
     return (
         <div className="list-item">
             <Link to="/courses/item">
-                <div className={`list-item-inner ${!isActive && 'inactive'}`}>
+                <div className={`list-item-inner ${!isActiveCourse && 'inactive'}`}>
                     <div className="item-cover" style={{
                         backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',
                         backgroundPosition: 'center, bottom',
@@ -29,7 +29,7 @@ export const CourseItem = ({course}: CourseItemProps) => {
                             {course.title}
                         </h3>
                         <div className="item-lessons-number">
-                            {course.lessons.length} уроков
+                            {isActiveCourse && course.lessons.length + ' уроков'}
                         </div>
                     </div>
                 </div>
