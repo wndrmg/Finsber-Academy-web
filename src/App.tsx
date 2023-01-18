@@ -31,7 +31,7 @@ export const App = () => {
                         </main>
                     } 
                     />
-                    <Route path="/courses/item" element={
+                    <Route path="/courses/:id" element={
                         <main>
                             <CoursePage />
                         </main>

@@ -11,7 +11,7 @@ export const CourseItem = ({course}: CourseItemProps) => {
 
     return (
         <div className="list-item">
-            <Link to="/courses/item">
+            <Link to={'/courses/' + course.id}>
                 <div className={`list-item-inner ${!isActiveCourse && 'inactive'}`}>
                     <div className="item-cover" style={{
                         backgroundImage: 'url(' + 'covers/personal-finance.svg' + ')',

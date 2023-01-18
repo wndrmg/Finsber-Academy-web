@@ -1,10 +1,10 @@
 import React from 'react'
 import {Outlet} from 'react-router-dom'
 import {useCourses} from '@src/hooks/useCourses/useCourses'
-import {CourseItem} from '@components/CourseItem';
+import {CourseItem} from '@components/CourseItem'
 
 export const CoursesList = () => {
-    const {courses, error, loading} = useCourses();
+    const {courses, error, loading} = useCourses()
 
     return (
         <>
