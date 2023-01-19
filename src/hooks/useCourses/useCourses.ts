@@ -7,21 +7,20 @@ export const useCourses = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    async function fetchCourses() {
-        try {
-            setError('')
-            setLoading(true)
-            const response = await axios.get<CourseData>('/api/config')
-            setCourses(response.data)
-            setLoading(false)
-        } catch (e: unknown) {
-            const error = e as AxiosError
-            setLoading(false)
-            setError(error.message)
-        }
-    }
-
     useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                setError('')
+                setLoading(true)
+                const response = await axios.get<CourseData>('/api/config')
+                setCourses(response.data)
+                setLoading(false)
+            } catch (e: unknown) {
+                const error = e as AxiosError
+                setLoading(false)
+                setError(error.message)
+            }
+        }
         fetchCourses()
     }, [])
 
