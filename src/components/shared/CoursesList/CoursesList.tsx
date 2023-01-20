@@ -2,7 +2,7 @@ import React from 'react';
 
 import {CourseData} from '@src/hooks/useCourses/useCourses.model';
 
-import {CourseItem} from '@components/CourseItem';
+import {CoursesItem} from '@components/shared/CoursesItem/CoursesItem';
 
 interface CoursesListProps {
     getCourses: {
@@ -23,7 +23,7 @@ export const CoursesList = ({getCourses}: CoursesListProps) => {
                     {loading && <div className="loader"></div>}
                     {error && <div className="error">{error}</div>}
                     {courses.map((course) => (
-                        <CourseItem course={course} key={course.id} />
+                        <CoursesItem course={course} key={course.id} />
                     ))}
                 </div>
             </div>

@@ -7,10 +7,11 @@ import {useCourses} from '@src/hooks/useCourses/useCourses';
 import {UseScrollToTop} from '@src/hooks/useScrollToTop/useScrollToTop';
 import {AllCoursesPage} from '@src/pages/AllCoursesPage';
 import {CoursePage} from '@src/pages/CoursePage';
+import {LessonPage} from '@src/pages/LessonPage';
 import {MainPage} from '@src/pages/MainPage';
 
-import {Footer} from '@components/Footer';
-import {Header} from '@components/Header';
+import {Footer} from '@components/shared/Footer/Footer';
+import {Header} from '@components/shared/Header/Header';
 
 export const App = () => {
     const getCourses = useCourses();
@@ -26,7 +27,15 @@ export const App = () => {
                         element={<MainPage getCourses={getCourses} />}
                     />
                     <Route
-                        path="/courses/:id"
+                        path="/courses/:courseId/lessons/:lessonId"
+                        element={
+                            <main>
+                                <LessonPage getCourses={getCourses} />
+                            </main>
+                        }
+                    />
+                    <Route
+                        path="/courses/:courseId"
                         element={
                             <main>
                                 <CoursePage getCourses={getCourses} />

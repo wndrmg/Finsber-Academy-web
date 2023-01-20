@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 
 import {ICourse} from '@src/hooks/useCourses/useCourses.model';
 
-interface CourseItemProps {
+interface CoursesItemProps {
     course: ICourse;
 }
 
-export const CourseItem = ({course}: CourseItemProps) => {
+export const CoursesItem = ({course}: CoursesItemProps) => {
     const isActiveCourse = course.lessons.length > 0;
 
     return (

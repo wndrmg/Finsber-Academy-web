@@ -2,8 +2,8 @@ import React from 'react';
 
 import {CourseData} from '@src/hooks/useCourses/useCourses.model';
 
-import {CoursesList} from '@components/CoursesList';
 import {PageHero} from '@components/PageHero';
+import {CoursesList} from '@components/shared/CoursesList/CoursesList';
 
 interface MainPageProps {
     getCourses: {
