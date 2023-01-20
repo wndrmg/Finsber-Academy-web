@@ -2,6 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import {ICourse} from '@src/hooks/useCourses/useCourses.model';
+import {
+    NUMBER_DECLINATIONS_TEMPLATES,
+    numberDeclination,
+} from '@src/utils/numberDeclination';
 
 interface CoursesItemProps {
     course: ICourse;
@@ -34,8 +38,15 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
                     <div className="item-description">
                         <h3 className="item-title">{course.title}</h3>
                         <div className="item-lessons-number">
-                            {isActiveCourse &&
-                                course.lessons.length + ' уроков'}
+                            {isActiveCourse && (
+                                <span>
+                                    {course.lessons.length + ' '}
+                                    {numberDeclination(
+                                        course.lessons.length,
+                                        NUMBER_DECLINATIONS_TEMPLATES.lessons,
+                                    )}
+                                </span>
+                            )}
                         </div>
                     </div>
                 </div>

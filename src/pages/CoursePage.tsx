@@ -3,6 +3,10 @@ import {Link, useParams} from 'react-router-dom';
 import {ReactSVG} from 'react-svg';
 
 import {CourseData} from '@src/hooks/useCourses/useCourses.model';
+import {
+    NUMBER_DECLINATIONS_TEMPLATES,
+    numberDeclination,
+} from '@src/utils/numberDeclination';
 
 import {LessonsList} from '@components/shared/LessonsList/LessonsList';
 
@@ -45,7 +49,11 @@ export const CoursePage = ({getCourses}: CoursePageProps) => {
                             <p>{currentCourse.description}</p>
                             <div className="item-lessons-number">
                                 <span>
-                                    {currentCourse.lessons.length} уроков
+                                    {currentCourse.lessons.length + ' '}
+                                    {numberDeclination(
+                                        currentCourse.lessons.length,
+                                        NUMBER_DECLINATIONS_TEMPLATES.lessons,
+                                    )}
                                 </span>
                             </div>
                             <Link to={`/courses/${currentCourse.id}/lessons/0`}>
