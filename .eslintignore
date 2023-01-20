@@ -1,5 +1,6 @@
 node_modules
 dist
 webpack
+src/redux
 .eslintrc.js
 webpack.config.babel.js
