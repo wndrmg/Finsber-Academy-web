@@ -1,10 +1,20 @@
 import React from 'react'
 import {Outlet} from 'react-router-dom'
-import {useCourses} from '@src/hooks/useCourses/useCourses'
+//import {useCourses} from '@src/hooks/useCourses/useCourses'
 import {CourseItem} from '@components/CourseItem'
+import {CourseData} from '@src/hooks/useCourses/useCourses.model';
 
-export const CoursesList = () => {
-    const {courses, error, loading} = useCourses()
+interface CoursesListProps {
+    getCourses: {
+        courses: CourseData,
+        error: string,
+        loading: boolean
+    }
+}
+
+export const CoursesList = ({getCourses}: CoursesListProps) => {
+
+    const {courses, error, loading} = getCourses
 
     return (
         <>

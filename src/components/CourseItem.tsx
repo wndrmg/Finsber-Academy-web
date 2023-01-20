@@ -1,5 +1,5 @@
 import React from 'react'
-import {ICourse} from '@src/hooks/useCourses/model'
+import {ICourse} from '@src/hooks/useCourses/useCourses.model'
 import {Link} from 'react-router-dom'
 
 interface CourseItemProps {

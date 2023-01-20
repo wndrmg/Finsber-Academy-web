@@ -5,44 +5,39 @@ import {
     Route,
 } from 'react-router-dom';
 
-import './App.scss';
 import { Header } from '@components/Header';
-import { PageHero } from '@components/PageHero';
-import { CoursesList } from '@components/CoursesList';
-import { CoursePage } from '@components/CoursePage';
+import { CoursePage } from '@src/pages/CoursePage';
 import { Footer } from '@components/Footer';
-import {ScrollToTop} from '@src/hooks/ScrollToTop/ScrollToTop';
+import {UseScrollToTop} from '@src/hooks/useScrollToTop/useScrollToTop';
+import {useCourses} from '@src/hooks/useCourses/useCourses';
+import {MainPage} from '@src/pages/MainPage';
+import {AllCoursesPage} from '@src/pages/AllCoursesPage';
+
+import './App.scss';
 
 
 export const App = () => {
+
+    const getCourses = useCourses()
     
     return (
         <div className="App">
             <BrowserRouter>
-                <ScrollToTop />
+                <UseScrollToTop />
                 <Header />
                 <Routes>
                     <Route path='/' element={
-                        <main>
-                            <PageHero />
-                            <div className='main-content'>
-                                <CoursesList />
-                            </div>
-                        </main>
+                        <MainPage getCourses={getCourses} />
                     } 
                     />
                     <Route path="/courses/:id" element={
                         <main>
-                            <CoursePage />
+                            <CoursePage getCourses={getCourses} />
                         </main>
                     } 
                     />
                     <Route path="/courses" element={
-                        <main>
-                            <div className='main-content'>
-                                <CoursesList />
-                            </div>
-                        </main>
+                        <AllCoursesPage getCourses={getCourses}/>
                     } 
                     />
                     <Route path="/*" element={ <h1>Страница не найдена</h1> } />

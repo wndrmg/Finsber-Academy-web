@@ -1,9 +1,7 @@
 {
   "exclude": [
     "/(node_modules|bower_components)/",
-    "/src\/adapters(.+)\/build(.+)?/",
-    "/monero_utils\/MyMoneroCoreCpp_ASMJS.asm.js/",
-    "/monero_utils\/MyMoneroCoreCpp_ASMJS.wasm/"
+    "/src\/adapters(.+)\/build(.+)?/"
   ],
   "presets": [
     "@babel/preset-typescript",

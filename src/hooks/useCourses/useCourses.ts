@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import axios, {AxiosError} from 'axios'
-import {CourseData} from './model'
+import {CourseData} from './useCourses.model'
 
 export const useCourses = () => {
     const [courses, setCourses] = useState<CourseData>([])
