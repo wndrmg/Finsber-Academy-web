@@ -1,29 +1,17 @@
-import axios, {AxiosError} from 'axios';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
-import {CourseData} from './useCourses.model';
+import {fetchCourses} from '@src/redux/reducers/courses/courses.actions';
+import {useTypedDispatch, useTypedSelector} from '@src/redux/store';
 
 export const useCourses = () => {
-    const [courses, setCourses] = useState<CourseData>([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const dispatch = useTypedDispatch();
+    const {courses, loading, error} = useTypedSelector(
+        (state) => state.courses,
+    );
 
     useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                setError('');
-                setLoading(true);
-                const response = await axios.get<CourseData>('/api/config');
-                setCourses(response.data);
-                setLoading(false);
-            } catch (e: unknown) {
-                const error = e as AxiosError;
-                setLoading(false);
-                setError(error.message);
-            }
-        };
-        fetchCourses();
+        dispatch(fetchCourses());
     }, []);
 
-    return {courses, error, loading};
+    return {courses, loading, error};
 };

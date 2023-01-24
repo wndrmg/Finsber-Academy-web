@@ -14,7 +14,7 @@ import {Footer} from '@components/shared/Footer/Footer';
 import {Header} from '@components/shared/Header/Header';
 
 export const App = () => {
-    const getCourses = useCourses();
+    const coursesData = useCourses();
 
     return (
         <div className="App">
@@ -24,29 +24,26 @@ export const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<MainPage getCourses={getCourses} />}
+                        element={<MainPage coursesData={coursesData} />}
                     />
                     <Route
                         path="/courses/:courseId/lessons/:lessonId"
-                        element={
-                            <main>
-                                <LessonPage getCourses={getCourses} />
-                            </main>
-                        }
+                        element={<LessonPage coursesData={coursesData} />}
                     />
                     <Route
                         path="/courses/:courseId"
-                        element={
-                            <main>
-                                <CoursePage getCourses={getCourses} />
-                            </main>
-                        }
+                        element={<CoursePage coursesData={coursesData} />}
                     />
                     <Route
                         path="/courses"
-                        element={<AllCoursesPage getCourses={getCourses} />}
+                        element={<AllCoursesPage coursesData={coursesData} />}
                     />
-                    <Route path="/*" element={<h1>Страница не найдена</h1>} />
+                    <Route
+                        path="/*"
+                        element={
+                            <div className="error">Страница не найдена</div>
+                        }
+                    />
                 </Routes>
                 <Footer />
             </BrowserRouter>

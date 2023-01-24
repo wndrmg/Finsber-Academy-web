@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {ReactSVG} from 'react-svg';
 
-import {CourseData} from '@src/hooks/useCourses/useCourses.model';
+import {CoursesState} from '@src/redux/reducers/courses/courses.model';
 import {
     NUMBER_DECLINATIONS_TEMPLATES,
     numberDeclination,
@@ -11,22 +11,18 @@ import {
 import {LessonsList} from '@components/shared/LessonsList/LessonsList';
 
 interface CoursePageProps {
-    getCourses: {
-        courses: CourseData;
-        error: string;
-        loading: boolean;
-    };
+    coursesData: CoursesState;
 }
 
-export const CoursePage = ({getCourses}: CoursePageProps) => {
-    const {courses, error, loading} = getCourses;
+export const CoursePage = ({coursesData}: CoursePageProps) => {
+    const {courses, error, loading} = coursesData;
     const urlParams = useParams();
     const currentCourse = courses.find(
         (course) => course.id === urlParams.courseId,
     );
 
     return (
-        <>
+        <main>
             {loading && <div className="loader"></div>}
             {error && <div className="error">{error}</div>}
             {currentCourse && (
@@ -68,6 +64,6 @@ export const CoursePage = ({getCourses}: CoursePageProps) => {
                     </div>
                 </>
             )}
-        </>
+        </main>
     );
 };

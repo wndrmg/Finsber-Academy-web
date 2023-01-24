@@ -1,26 +1,28 @@
-import {composeWithDevTools} from '@redux-devtools/extension';
-import {applyMiddleware, combineReducers, createStore} from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
+import {AnyAction, applyMiddleware, combineReducers, createStore} from 'redux';
+import thunk, {ThunkAction, ThunkDispatch} from 'redux-thunk';
 
-import {instrumentsReducer} from '@src/redux/reducers/instruments';
+import {coursesReducer as courses} from '@src/redux/reducers/courses/courses.reducer';
 
-import {rootSaga} from '@src/redux/store.sagas';
+const rootReducer = combineReducers({
+    courses,
+});
 
-export const store = (() => {
-    const sagaMiddleware = createSagaMiddleware();
-    const storeInstance = createStore(
-        combineReducers({
-            instruments: instrumentsReducer,
-        }),
-        undefined,
-        composeWithDevTools(applyMiddleware(sagaMiddleware)),
-    );
-    sagaMiddleware.run(rootSaga);
-    // if ((window as any)?.__REDUX_DEVTOOLS_EXTENSION__) {
-    //     (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-    // }
-    return storeInstance;
-})();
+const configureStore = () => {
+    return createStore(rootReducer, applyMiddleware(thunk));
+};
+
+export const store = configureStore();
+export const useAppDispatch = () => useDispatch<TypedDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export type RootState = ReturnType<typeof store.getState>;
+
 export type AppDispatch = typeof store.dispatch;
+export type ReduxState = ReturnType<typeof rootReducer>;
+export type TypedDispatch = ThunkDispatch<ReduxState, any, AnyAction>;
+// prettier-ignore
+export type TypedThunk<ReturnType = void> = ThunkAction<ReturnType, ReduxState, unknown, AnyAction>;
+export const useTypedDispatch = () => useDispatch<TypedDispatch>();
+export const useTypedSelector: TypedUseSelectorHook<ReduxState> = useSelector;
+export type Selector<S> = (state: RootState) => S;

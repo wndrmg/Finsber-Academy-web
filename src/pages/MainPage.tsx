@@ -1,23 +1,19 @@
 import React from 'react';
 
-import {CourseData} from '@src/hooks/useCourses/useCourses.model';
+import {CoursesState} from '@src/redux/reducers/courses/courses.model';
 
 import {PageHero} from '@components/PageHero';
 import {CoursesList} from '@components/shared/CoursesList/CoursesList';
 
 interface MainPageProps {
-    getCourses: {
-        courses: CourseData;
-        error: string;
-        loading: boolean;
-    };
+    coursesData: CoursesState;
 }
-export const MainPage = ({getCourses}: MainPageProps) => {
+export const MainPage = ({coursesData}: MainPageProps) => {
     return (
         <main>
             <PageHero />
             <div className="main-content">
-                <CoursesList getCourses={getCourses} />
+                <CoursesList coursesData={coursesData} />
             </div>
         </main>
     );

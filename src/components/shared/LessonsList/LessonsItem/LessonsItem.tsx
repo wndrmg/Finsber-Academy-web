@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import {ILesson} from '@src/hooks/useCourses/useCourses.model';
+import {ILesson} from '@src/redux/reducers/courses/courses.model';
 
 interface LessonsItemItemProps {
     lesson: ILesson;

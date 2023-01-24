@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import {ICourse} from '@src/hooks/useCourses/useCourses.model';
+import {ICourse} from '@src/redux/reducers/courses/courses.model';
 import {
     NUMBER_DECLINATIONS_TEMPLATES,
     numberDeclination,
@@ -16,7 +16,7 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
 
     return (
         <div className="list-item">
-            <Link to={'/courses/' + course.id}>
+            <Link to={`/courses/${course.id}`}>
                 <div
                     className={`list-item-inner ${
                         !isActiveCourse && 'inactive'
@@ -40,7 +40,7 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
                         <div className="item-lessons-number">
                             {isActiveCourse && (
                                 <span>
-                                    {course.lessons.length + ' '}
+                                    {`${course.lessons.length} `}
                                     {numberDeclination(
                                         course.lessons.length,
                                         NUMBER_DECLINATIONS_TEMPLATES.lessons,

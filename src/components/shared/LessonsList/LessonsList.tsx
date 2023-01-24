@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {ICourse} from '@src/hooks/useCourses/useCourses.model';
+import {ICourse} from '@src/redux/reducers/courses/courses.model';
 
-import {LessonsItem} from '@components/shared/LessonsItem/LessonsItem';
+import {LessonsItem} from '@components/shared/LessonsList/LessonsItem/LessonsItem';
 
 interface LessonsListProps {
     currentCourse: ICourse;

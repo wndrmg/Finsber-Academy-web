@@ -1,19 +1,15 @@
 import React from 'react';
 
-import {CourseData} from '@src/hooks/useCourses/useCourses.model';
+import {CoursesState} from '@src/redux/reducers/courses/courses.model';
 
-import {CoursesItem} from '@components/shared/CoursesItem/CoursesItem';
+import {CoursesItem} from '@components/shared/CoursesList/CoursesItem/CoursesItem';
 
 interface CoursesListProps {
-    getCourses: {
-        courses: CourseData;
-        error: string;
-        loading: boolean;
-    };
+    coursesData: CoursesState;
 }
 
-export const CoursesList = ({getCourses}: CoursesListProps) => {
-    const {courses, error, loading} = getCourses;
+export const CoursesList = ({coursesData}: CoursesListProps) => {
+    const {courses, error, loading} = coursesData;
 
     return (
         <>

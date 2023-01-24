@@ -1,18 +1,14 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 
-import {CourseData} from '@src/hooks/useCourses/useCourses.model';
+import {CoursesState} from '@src/redux/reducers/courses/courses.model';
 
 interface LessonPageProps {
-    getCourses: {
-        courses: CourseData;
-        error: string;
-        loading: boolean;
-    };
+    coursesData: CoursesState;
 }
 
-export const LessonPage = ({getCourses}: LessonPageProps) => {
-    const {courses, error, loading} = getCourses;
+export const LessonPage = ({coursesData}: LessonPageProps) => {
+    const {courses, error, loading} = coursesData;
     const urlParams = useParams();
     const currentCourse = courses.find(
         (course) => course.id === urlParams.courseId,
@@ -22,14 +18,16 @@ export const LessonPage = ({getCourses}: LessonPageProps) => {
     );
 
     return (
-        <div className="main-content">
-            {loading && <div className="loader"></div>}
-            {error && <div className="error">{error}</div>}
-            {currentLesson ? (
-                <h1>{currentLesson.title}</h1>
-            ) : (
-                <div className="error">Урок не найден</div>
-            )}
-        </div>
+        <main>
+            <div className="main-content">
+                {loading && <div className="loader"></div>}
+                {error && <div className="error">{error}</div>}
+                {currentLesson ? (
+                    <h1>{currentLesson.title}</h1>
+                ) : (
+                    <div className="error">Урок не найден</div>
+                )}
+            </div>
+        </main>
     );
 };
