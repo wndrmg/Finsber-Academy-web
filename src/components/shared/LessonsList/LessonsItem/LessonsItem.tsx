@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 
 import {ILesson} from '@src/redux/reducers/courses/courses.model';
 
+import classes from './LessonsItem.module.scss';
+
 interface LessonsItemItemProps {
     lesson: ILesson;
     currentCourseId: string;
@@ -13,11 +15,11 @@ export const LessonsItem = ({
     currentCourseId,
 }: LessonsItemItemProps) => {
     return (
-        <div className="list-item">
+        <div className={classes.listItem}>
             <Link to={`/courses/${currentCourseId}/lessons/${lesson.id}`}>
-                <div className="list-item-inner">
+                <div className={classes.listItemInner}>
                     <div
-                        className="item-cover"
+                        className={classes.itemCover}
                         style={{
                             backgroundImage:
                                 'url(' + 'covers/personal-finance.svg' + ')',
@@ -25,9 +27,9 @@ export const LessonsItem = ({
                             backgroundRepeat: 'no-repeat',
                         }}
                     ></div>
-                    <div className="item-description">
-                        <h3 className="item-title">{lesson.title}</h3>
-                        <div className="item-lessons-number">
+                    <div className={classes.itemDescription}>
+                        <h3>{lesson.title}</h3>
+                        <div className={classes.itemLessonsNumber}>
                             {'Урок ' + (Number(lesson.id) + 1)}
                         </div>
                     </div>

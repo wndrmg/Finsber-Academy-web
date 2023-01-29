@@ -1,0 +1,15 @@
+.lessons-list {
+  h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+  }
+  .list-inner {
+    display: grid;
+    grid-template-columns: none;
+    grid-gap: 20px;
+  }
+  a, a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: #212730;
+  }
+}

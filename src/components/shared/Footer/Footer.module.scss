@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  .footer-inner {
+    .footer-logo {
+      margin: 10px 20px;
+      width: 161px;
+      opacity: 50%;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .footer-inner {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-inner {
+    width: 1024px;
+  }
+}

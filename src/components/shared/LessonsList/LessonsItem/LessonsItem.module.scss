@@ -1,0 +1,43 @@
+.list-item {
+  .list-item-inner {
+    text-align: left;
+    border-radius: 6px;
+    box-shadow: 0 3px 15px #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    min-height: 130px;
+
+    h3 {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+
+    .item-cover {
+      position: relative;
+      display: flex;
+      flex-basis: 40%;
+
+      @media (min-width: 768px) {
+        flex-basis: 25%;
+      }
+    }
+
+    .item-description {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 60%;
+      justify-content: space-between;
+      padding: 20px;
+
+      .item-lessons-number {
+        font-size: 15px;
+      }
+
+      @media (min-width: 768px) {
+        flex-basis: 75%;
+      }
+
+    }
+  }
+}

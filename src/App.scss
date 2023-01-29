@@ -4,6 +4,9 @@
   flex-direction: column;
   min-height: 100vh;
 }
+.main-content {
+  padding: 40px 20px;
+}
 .button {
   width: 100%;
   height: 50px;
@@ -13,122 +16,6 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-}
-.header, footer {
-  display: flex;
-
-  .header-logo, .footer-logo {
-    margin: 10px 20px;
-    width: 161px;
-  }
-  .footer-logo {
-    opacity: 50%;
-  }
-}
-.page-hero {
-  background: #f2f4fc;
-  padding: 40px 20px;
-
-    .page-hero-inner {
-      text-align: center;
-      position: relative;
-    }
-  
-    h1 {
-      margin: 0 0 20px 0;
-      font-size: 28px;
-    }
-
-    p {
-      margin: 20px 0 35px 0;
-      font-size: 15px;
-      line-height: 21px;
-    }
-
-    .item-lessons-number {
-      padding: 15px 16px 16px 16px;
-      width: 112px;
-      margin: 0 auto 40px auto;
-      border-radius: 6px;
-      background: #d7deeb;
-
-      span {
-        background: url('../public/book-cover.svg') #d7deeb no-repeat top left;
-        background-size: 20px 20px;
-        padding-left: 30px;
-      }
-    }
-}
-.main-content {
-  padding: 40px 20px;
-}
-.list-inner {
-  display: flex;
-  flex-direction: column;
-
-    h2 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    a, a:hover, a:active, a:visited {
-      text-decoration: none;
-      color: #212730;
-    }
-
-    .list-item-inner {
-      text-align: left;
-      height: 300px;
-      border-radius: 6px;
-      box-shadow: 0 3px 15px #f0f0f0;
-      margin: 20px 0 0 0;
-      display: flex;
-      flex-direction: column;
-
-      h3 {
-        margin: 0;
-        font-size: 18px;
-      }
-
-      .item-cover {
-        position: relative;
-        display: flex;
-        flex-basis: 60%;
-      }
-
-      .item-description {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 40%;
-        justify-content: space-between;
-        padding: 20px;
-
-          .item-lessons-number {
-            font-size: 15px;
-          }
-      }
-    }
-}
-.lessons-list {
-  .list-inner {
-    .list-item-inner {
-      flex-direction: row;
-      height: auto;
-      min-height: 130px;
-
-      .item-cover {
-        flex-basis: 40%;
-      }
-      .item-description {
-        flex-basis: 60%;
-
-        h3 {
-          font-size: 16px;
-          margin: 0 0 10px 0;
-        }
-      }
-    }
-  }
 }
 .item-badge {
   position: absolute;
@@ -142,14 +29,14 @@
     color: #2963ff;
   }
 }
-main .back-link {
+.back-link {
   text-align: left;
   margin: -20px 0 30px 0;
   a {
     text-decoration: none;
     color: #212730;
     font-size: 14px;
-    
+
     &:hover {
       color: #737475;;
     }
@@ -157,6 +44,29 @@ main .back-link {
       content: '< ';
     }
   }
+}
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #2963ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.error {
+  margin: 20px 0 20px 0;
+  padding: 10px;
+  border: 2px solid #fd184b;
+  color: #fd184b;
+  font-weight: bold;
 }
 
 //style modifiers
@@ -206,143 +116,16 @@ main .back-link {
   background: none;
   border: 1px solid #2963ff;
 }
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #2963ff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.error {
-  margin: 20px 0 20px 0;
-  padding: 10px;
-  border: 2px solid #fd184b;
-  color: #fd184b;
-  font-weight: bold;
-}
 
 //adaptive
-@media (min-width: 425px) {
-  .page-hero {
-    .page-hero-inner {
-      width: 75%;
-      margin: 0 auto;
-    }
-    .button {
-      width: 250px;
-    }
-  }
-}
 
 @media (min-width: 768px) {
-  
-  .header-inner, .footer-inner {
-    width: 768px;
-    margin: 0 auto;
-  }
-
-  .page-hero {
-    padding: 60px 20px;
-
-    .page-hero-inner {
-      width: 728px;
-      margin: 0 auto;
-      text-align: left;
-      position: relative;
-
-      h1 {
-        font-size: 32px;
-        width: 50%;
-      }
-
-      p {
-        width: 50%;
-        font-size: 16px;
-        line-height: 23px;
-        margin: 30px 0 35px 0;
-      }
-
-      .page-hero-pic {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
-      }
-
-      .item-lessons-number {
-        margin: 0 0 40px 0;
-        text-align: center;
-      }
-    }
-  }
   .main-content {
     width: 728px;
     margin: 0 auto;
   }
-  .courses-list {
-
-    .list-inner {
-      flex-direction: row;
-  
-      .list-item {
-        width: 50%;
-      }
-      .list-item:not(.list-item:last-child) {
-        margin-right: 20px;
-      }
-    }
-  }
-  .lessons-list {
-
-    .list-inner {
-      flex-direction: column;
-
-      .list-item-inner {
-        
-        .item-cover {
-          flex-basis: 25%;
-        }
-        .item-description {
-          flex-basis: 75%;
-        }
-      }
-    }
-  }
 }
-
 @media (min-width: 1024px) {
-  .header-inner, .footer-inner {
-    width: 1024px;
-  }
-
-  .page-hero {
-    .page-hero-inner {
-      width: 984px;
-
-      h1 {
-        font-size: 36px;
-      }
-
-      p {
-        margin: 40px 0 35px 0;
-        width: 45%;
-        &.page-hero-main {
-          margin: 40px 0 115px 0;
-        }
-      }
-    }
-  }
-
   .main-content {
     width: 984px;
   }

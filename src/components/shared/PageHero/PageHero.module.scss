@@ -1,0 +1,105 @@
+.page-hero {
+  background: #f2f4fc;
+  padding: 40px 20px;
+
+  .page-hero-inner {
+    text-align: center;
+    position: relative;
+  }
+
+  h1 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+  }
+
+  p {
+    margin: 20px 0 35px 0;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .page-hero-pic {
+
+  }
+
+  .item-lessons-number {
+    padding: 15px 16px 16px 16px;
+    width: 112px;
+    margin: 0 auto 40px auto;
+    border-radius: 6px;
+    background: #d7deeb;
+
+    span {
+      background: url(~@images/book-cover.svg) #d7deeb no-repeat top left;
+      background-size: 20px 20px;
+      padding-left: 30px;
+    }
+  }
+}
+@media (min-width: 425px) {
+  .page-hero {
+    .page-hero-inner {
+      width: 75%;
+      margin: 0 auto;
+    }
+    button {
+      width: 250px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .page-hero {
+    padding: 60px 20px;
+
+    .page-hero-inner {
+      width: 728px;
+      margin: 0 auto;
+      text-align: left;
+      position: relative;
+
+      h1 {
+        font-size: 32px;
+        width: 50%;
+      }
+
+      p {
+        width: 50%;
+        font-size: 16px;
+        line-height: 23px;
+        margin: 30px 0 35px 0;
+      }
+
+      .page-hero-pic {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+      }
+
+      .item-lessons-number {
+        margin: 0 0 40px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .page-hero {
+    .page-hero-inner {
+      width: 984px;
+
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        margin: 40px 0 35px 0;
+        width: 45%;
+        &.page-hero-main {
+          margin: 40px 0 115px 0;
+        }
+      }
+    }
+  }
+}

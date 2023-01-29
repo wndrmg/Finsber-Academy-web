@@ -1,0 +1,33 @@
+.list-item {
+  .list-item-inner {
+    text-align: left;
+    height: 300px;
+    border-radius: 6px;
+    box-shadow: 0 3px 15px #f0f0f0;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .item-cover {
+      position: relative;
+      display: flex;
+      flex-basis: 60%;
+    }
+
+    .item-description {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 40%;
+      justify-content: space-between;
+      padding: 20px;
+
+      .item-lessons-number {
+        font-size: 15px;
+      }
+    }
+  }
+}

@@ -7,6 +7,8 @@ import {
     numberDeclination,
 } from '@src/utils/numberDeclination';
 
+import classes from './CoursesItem.module.scss';
+
 interface CoursesItemProps {
     course: ICourse;
 }
@@ -15,15 +17,15 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
     const isActiveCourse = course.lessons.length > 0;
 
     return (
-        <div className="list-item">
+        <div className={classes.listItem}>
             <Link to={`/courses/${course.id}`}>
                 <div
-                    className={`list-item-inner ${
+                    className={`${classes.listItemInner} ${
                         !isActiveCourse && 'inactive'
                     }`}
                 >
                     <div
-                        className="item-cover"
+                        className={classes.itemCover}
                         style={{
                             backgroundImage:
                                 'url(' + 'covers/personal-finance.svg' + ')',
@@ -35,9 +37,9 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
                             <span>{course.level}</span>
                         </div>
                     </div>
-                    <div className="item-description">
-                        <h3 className="item-title">{course.title}</h3>
-                        <div className="item-lessons-number">
+                    <div className={classes.itemDescription}>
+                        <h3>{course.title}</h3>
+                        <div className={classes.itemLessonsNumber}>
                             {isActiveCourse && (
                                 <span>
                                     {`${course.lessons.length} `}
