@@ -46,7 +46,7 @@ export const PageHero = ({pageHeroData, isMainPage}: PageHeroProps) => {
                 />
                 <p
                     className={
-                        !isMainPage ? 'page-hero-course' : 'page-hero-main'
+                        !isMainPage ? 'page-hero-course' : classes.pageHeroMain
                     }
                 >
                     {pageHeroData.pageHeroP}

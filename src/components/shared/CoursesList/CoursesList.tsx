@@ -14,17 +14,15 @@ export const CoursesList = ({coursesData}: CoursesListProps) => {
     const {courses, error, loading} = coursesData;
 
     return (
-        <>
-            <div className={classes.coursesList}>
-                <h2>Все курсы</h2>
-                <div className={classes.listInner}>
-                    {loading && <div className="loader"></div>}
-                    {error && <div className="error">{error}</div>}
-                    {courses.map((course) => (
-                        <CoursesItem course={course} key={course.id} />
-                    ))}
-                </div>
+        <div className={classes.coursesList}>
+            <h2>Все курсы</h2>
+            <div className={classes.listInner}>
+                {loading && <div className="loader"></div>}
+                {error && <div className="error">{error}</div>}
+                {courses.map((course) => (
+                    <CoursesItem course={course} key={course.id} />
+                ))}
             </div>
-        </>
+        </div>
     );
 };
