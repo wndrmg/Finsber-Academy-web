@@ -30,7 +30,8 @@ export const LessonsItem = ({
                     <div className={classes.itemDescription}>
                         <h3>{lesson.title}</h3>
                         <div className={classes.itemLessonsNumber}>
-                            {'Урок ' + (Number(lesson.id) + 1)}
+                            {`Урок ${Number(lesson.id) + 1} `}
+                            {`(${lesson.timeMinutes} мин.)`}
                         </div>
                     </div>
                 </div>
