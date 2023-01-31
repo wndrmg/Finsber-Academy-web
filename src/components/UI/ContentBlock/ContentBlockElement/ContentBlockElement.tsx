@@ -2,6 +2,8 @@ import React from 'react';
 
 import {IBlock} from '@src/redux/reducers/courses/courses.model';
 
+import classes from '../ContentBlock.module.scss';
+
 interface BlockElementProps {
     elem: IBlock;
 }
@@ -13,10 +15,24 @@ export const ContentBlockElement = ({elem}: BlockElementProps) => {
     if (elem.type === 'H2') return <h3>{elem.text}</h3>;
     if (elem.type === 'LINK')
         return (
-            <a href={elem.url} target="_blank" rel="noreferrer">
-                <h4>{elem.title}</h4>
-                <img src="https://via.placeholder.com/80" alt="promo" />
-                <p>{elem.text}</p>
+            <a
+                className={classes.blockBanner}
+                href={elem.url}
+                target="_blank"
+                rel="noreferrer"
+            >
+                <div>
+                    <img
+                        width="80px"
+                        height="80px"
+                        src="/covers/personal-finance.svg"
+                        alt="promo"
+                    />
+                </div>
+                <div>
+                    <h4>{elem.title}</h4>
+                    <p>{elem.text}</p>
+                </div>
             </a>
         );
     return null;

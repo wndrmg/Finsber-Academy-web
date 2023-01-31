@@ -3,7 +3,7 @@
   line-height: 1.7rem;
 
   a {
-    color: #2963ff;
+    color: #3e72ff;
     outline: none;
     text-decoration: none;
   }
@@ -11,13 +11,10 @@
   a:focus,
   a:hover,
   a:active,
+  a:visited,
   a.active {
-    color: #1340bd;
+    //color: #3e72ff;
     text-decoration: none;
-  }
-
-  a:visited {
-    color: #2963ff;
   }
 
   h1,
@@ -107,6 +104,29 @@
   }
 
   form input {
-    margin: 0 .5rem 0 0;
+    margin: 0 1rem 0 0;
+    width: 16px;
+  }
+  .block-banner {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    height: 80px;
+    background-color: #3e72ff;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    color: #fff;
+    //box-shadow: 0 3px 15px #bdbdbd;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      box-shadow: -5px 5px 20px #b6b6b6;
+      translate: 3px -3px;
+    }
+    h4 {
+      margin-top: 10px;
+    }
+    p {
+      color: #fff;
+    }
   }
 }
