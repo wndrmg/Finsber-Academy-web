@@ -1,0 +1,112 @@
+.content-block {
+
+  line-height: 1.7rem;
+
+  a {
+    color: #2963ff;
+    outline: none;
+    text-decoration: none;
+  }
+
+  a:focus,
+  a:hover,
+  a:active,
+  a.active {
+    color: #1340bd;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #2963ff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5em;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: .8rem;
+  }
+
+  p {
+    margin: 0 0 1.2rem;
+  }
+
+  ul,
+  ol {
+    margin: 1rem 0 1rem 1rem;
+    padding: 0;
+  }
+
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin: .8rem 0 .8rem .8rem;
+  }
+
+  ul li,
+  ol li {
+    margin-top: .5rem;
+  }
+
+  ul {
+    list-style: disc inside;
+  }
+
+  ul ul {
+    list-style-type: circle;
+  }
+
+  ol {
+    list-style: decimal inside;
+  }
+
+  ol ol {
+    list-style-type: lower-alpha;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  form label {
+    margin-top: .5rem;
+    display: inline-flex;
+  }
+
+  form input {
+    margin: 0 .5rem 0 0;
+  }
+}
