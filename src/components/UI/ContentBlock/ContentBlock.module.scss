@@ -98,11 +98,11 @@
   form {
     display: flex;
     flex-direction: column;
+    row-gap: .5rem;
     margin: 1rem;
   }
 
   form label {
-    margin-top: .5rem;
     display: inline-flex;
   }
 

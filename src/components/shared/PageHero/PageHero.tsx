@@ -51,7 +51,7 @@ export const PageHero = ({pageHeroData, isMainPage}: PageHeroProps) => {
                 >
                     {pageHeroData.pageHeroP}
                 </p>
-                {!isMainPage && pageHeroData.pageHeroLessonsNumber && (
+                {!isMainPage && !!pageHeroData.pageHeroLessonsNumber && (
                     <div className={classes.itemLessonsNumber}>
                         <span>
                             {pageHeroData.pageHeroLessonsNumber + ' '}
