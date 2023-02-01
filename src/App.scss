@@ -124,6 +124,10 @@
     width: 728px;
     margin: 0 auto;
   }
+  .main-content-lesson {
+    box-shadow: -40px 6px 40px -60px #999, 40px 6px 40px -60px #999;
+    padding: 60px 30px;
+  }
 }
 @media (min-width: 1024px) {
   .main-content {

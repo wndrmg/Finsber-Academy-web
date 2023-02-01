@@ -1,4 +1,9 @@
 .list-item {
+  a, a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: #212730;
+  }
+
   .list-item-inner {
     text-align: left;
     border-radius: 6px;
@@ -38,6 +43,19 @@
         flex-basis: 75%;
       }
 
+    }
+  }
+}
+.list-item-lesson {
+  margin-bottom: 30px;
+
+  .list-item-inner {
+    box-shadow: none;
+    padding: 15px;
+    background: #f2f4fc;
+
+    h3 {
+      font-size: 20px;
     }
   }
 }

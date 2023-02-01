@@ -116,8 +116,7 @@
     border-radius: 12px;
     margin-bottom: 1rem;
     color: #fff;
-    //box-shadow: 0 3px 15px #bdbdbd;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-out;
     &:hover {
       box-shadow: -5px 5px 20px #b6b6b6;
       translate: 3px -3px;

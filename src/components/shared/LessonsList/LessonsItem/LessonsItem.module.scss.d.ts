@@ -7,6 +7,7 @@ declare namespace LessonsItemModuleScssNamespace {
         itemLessonsNumber: string;
         listItem: string;
         listItemInner: string;
+        listItemLesson: string;
     }
 }
 

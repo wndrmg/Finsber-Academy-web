@@ -8,14 +8,22 @@ import classes from './LessonsItem.module.scss';
 interface LessonsItemItemProps {
     lesson: ILesson;
     currentCourseId: string;
+    isLessonPage: boolean;
 }
 
 export const LessonsItem = ({
     lesson,
     currentCourseId,
+    isLessonPage,
 }: LessonsItemItemProps) => {
     return (
-        <div className={classes.listItem}>
+        <div
+            className={
+                !isLessonPage
+                    ? classes.listItem
+                    : `${classes.listItem} ${classes.listItemLesson}`
+            }
+        >
             <Link to={`/courses/${currentCourseId}/lessons/${lesson.id}`}>
                 <div className={classes.listItemInner}>
                     <div

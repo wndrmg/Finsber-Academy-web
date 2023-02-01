@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 import {CoursesState} from '@src/redux/reducers/courses/courses.model';
 
@@ -27,9 +27,15 @@ export const LessonPage = ({coursesData}: LessonPageProps) => {
                 {error && <div className="error">{error}</div>}
                 {currentLesson && currentCourse ? (
                     <>
+                        <div className="back-link">
+                            <Link to="../.." relative="path">
+                                Назад
+                            </Link>
+                        </div>
                         <LessonsItem
                             lesson={currentLesson}
                             currentCourseId={currentCourse.id}
+                            isLessonPage={true}
                         />
                         {currentLesson.blocks.map((block, index) => (
                             <ContentBlock block={block} key={index} />
