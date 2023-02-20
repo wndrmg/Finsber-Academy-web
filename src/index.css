@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     min-width: 320px;
     margin: 0;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto',
         'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;

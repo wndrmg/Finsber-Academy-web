@@ -23,8 +23,9 @@ export const ContentBlock = ({block}: BlockProps) => {
             {block.map((elem, index) => {
                 if (elem.type === 'LI') {
                     liArr.push(<li key={elem.text}>{elem.text}</li>);
-                    if (liArr.length === liNumberInBlock)
+                    if (liArr.length === liNumberInBlock) {
                         return <ul key={index}>{liArr}</ul>;
+                    }
                 }
                 if (elem.type === 'TEST') {
                     radioArr.push(

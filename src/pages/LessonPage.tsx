@@ -1,17 +1,14 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {Link, useParams} from 'react-router-dom';
 
-import {CoursesState} from '@src/redux/reducers/courses/courses.model';
+import {selectCoursesSelector} from '@src/redux/reducers/courses/courses.selector';
 
 import {LessonsItem} from '@components/shared/LessonsList/LessonsItem/LessonsItem';
 import {ContentBlock} from '@components/UI/ContentBlock/ContentBlock';
 
-interface LessonPageProps {
-    coursesData: CoursesState;
-}
-
-export const LessonPage = ({coursesData}: LessonPageProps) => {
-    const {courses, error, loading} = coursesData;
+export const LessonPage = () => {
+    const courses = useSelector(selectCoursesSelector);
     const urlParams = useParams();
     const currentCourse = courses.find(
         (course) => course.id === urlParams.courseId,
@@ -19,13 +16,11 @@ export const LessonPage = ({coursesData}: LessonPageProps) => {
     const currentLesson = currentCourse?.lessons.find(
         (lesson) => lesson.id === urlParams.lessonId,
     );
-    //console.log(currentLesson?.blocks);
+    console.log(currentLesson?.blocks);
     return (
         <main>
             <div className="main-content main-content-lesson">
-                {loading && <div className="loader"></div>}
-                {error && <div className="error">{error}</div>}
-                {currentLesson && currentCourse ? (
+                {currentLesson && currentCourse && (
                     <>
                         <div className="back-link">
                             <Link to="../.." relative="path">
@@ -41,8 +36,6 @@ export const LessonPage = ({coursesData}: LessonPageProps) => {
                             <ContentBlock block={block} key={index} />
                         ))}
                     </>
-                ) : (
-                    <div className="error">Урок не найден</div>
                 )}
             </div>
         </main>

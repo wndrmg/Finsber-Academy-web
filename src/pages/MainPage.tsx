@@ -1,14 +1,9 @@
 import React from 'react';
 
-import {CoursesState} from '@src/redux/reducers/courses/courses.model';
-
 import {CoursesList} from '@components/shared/CoursesList/CoursesList';
 import {PageHero} from '@components/shared/PageHero/PageHero';
 
-interface MainPageProps {
-    coursesData: CoursesState;
-}
-export const MainPage = ({coursesData}: MainPageProps) => {
+export const MainPage = () => {
     const pageHeroData = {
         pageHeroH1: 'Курсы по финансам и\xa0инвестициям',
         pageHeroP: `Научитесь управлять своими финансами. 
@@ -24,7 +19,7 @@ export const MainPage = ({coursesData}: MainPageProps) => {
         <main>
             <PageHero pageHeroData={pageHeroData} isMainPage={true} />
             <div className="main-content">
-                <CoursesList coursesData={coursesData} />
+                <CoursesList />
             </div>
         </main>
     );

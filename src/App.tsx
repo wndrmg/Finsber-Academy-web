@@ -14,30 +14,22 @@ import {Footer} from '@components/shared/Footer/Footer';
 import {Header} from '@components/shared/Header/Header';
 
 export const App = () => {
-    const coursesData = useCourses();
-
+    const {error, loading} = useCourses();
     return (
         <div className="App">
+            {loading && <div className="loader"></div>}
+            {error && <div className="error">{error}</div>}
             <BrowserRouter>
                 <UseScrollToTop />
                 <Header />
                 <Routes>
-                    <Route
-                        path="/"
-                        element={<MainPage coursesData={coursesData} />}
-                    />
+                    <Route path="/" element={<MainPage />} />
                     <Route
                         path="/courses/:courseId/lessons/:lessonId"
-                        element={<LessonPage coursesData={coursesData} />}
+                        element={<LessonPage />}
                     />
-                    <Route
-                        path="/courses/:courseId"
-                        element={<CoursePage coursesData={coursesData} />}
-                    />
-                    <Route
-                        path="/courses"
-                        element={<AllCoursesPage coursesData={coursesData} />}
-                    />
+                    <Route path="/courses/:courseId" element={<CoursePage />} />
+                    <Route path="/courses" element={<AllCoursesPage />} />
                     <Route
                         path="/*"
                         element={

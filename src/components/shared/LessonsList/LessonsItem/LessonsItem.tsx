@@ -16,15 +16,36 @@ export const LessonsItem = ({
     currentCourseId,
     isLessonPage,
 }: LessonsItemItemProps) => {
-    return (
-        <div
-            className={
-                !isLessonPage
-                    ? classes.listItem
-                    : `${classes.listItem} ${classes.listItemLesson}`
-            }
-        >
-            <Link to={`/courses/${currentCourseId}/lessons/${lesson.id}`}>
+    if (!isLessonPage) {
+        return (
+            <div className={classes.listItem}>
+                <Link to={`/courses/${currentCourseId}/lessons/${lesson.id}`}>
+                    <div className={classes.listItemInner}>
+                        <div
+                            className={classes.itemCover}
+                            style={{
+                                backgroundImage:
+                                    'url(' +
+                                    'covers/personal-finance.svg' +
+                                    ')',
+                                backgroundPosition: 'center, bottom',
+                                backgroundRepeat: 'no-repeat',
+                            }}
+                        ></div>
+                        <div className={classes.itemDescription}>
+                            <h3>{lesson.title}</h3>
+                            <div className={classes.itemLessonsNumber}>
+                                {`Урок ${Number(lesson.id) + 1} `}
+                                {`(${lesson.timeMinutes} мин.)`}
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            </div>
+        );
+    } else {
+        return (
+            <div className={`${classes.listItem} ${classes.listItemLesson}`}>
                 <div className={classes.listItemInner}>
                     <div
                         className={classes.itemCover}
@@ -43,7 +64,7 @@ export const LessonsItem = ({
                         </div>
                     </div>
                 </div>
-            </Link>
-        </div>
-    );
+            </div>
+        );
+    }
 };

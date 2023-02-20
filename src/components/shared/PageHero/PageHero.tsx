@@ -10,10 +10,10 @@ import {
 import classes from './PageHero.module.scss';
 
 interface PageHeroProps {
-    pageHeroData: IPageHeroData;
+    pageHeroData: PageHeroDataType;
     isMainPage: boolean;
 }
-export type IPageHeroData = {
+export type PageHeroDataType = {
     pageHeroH1: string | undefined;
     pageHeroP: string | undefined;
     pageHeroButtonLink: string;

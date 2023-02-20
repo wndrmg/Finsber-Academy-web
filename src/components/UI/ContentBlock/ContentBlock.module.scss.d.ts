@@ -5,6 +5,7 @@ declare namespace ContentBlockModuleScssNamespace {
         active: string;
         blockBanner: string;
         contentBlock: string;
+        contentBlockTest: string;
     }
 }
 

@@ -1,24 +1,19 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
-import {CoursesState} from '@src/redux/reducers/courses/courses.model';
+import {selectCoursesSelector} from '@src/redux/reducers/courses/courses.selector';
 
 import {CoursesItem} from '@components/shared/CoursesList/CoursesItem/CoursesItem';
 
 import classes from './CoursesList.module.scss';
 
-interface CoursesListProps {
-    coursesData: CoursesState;
-}
-
-export const CoursesList = ({coursesData}: CoursesListProps) => {
-    const {courses, error, loading} = coursesData;
+export const CoursesList = () => {
+    const courses = useSelector(selectCoursesSelector);
 
     return (
         <div className={classes.coursesList}>
             <h2>Все курсы</h2>
             <div className={classes.listInner}>
-                {loading && <div className="loader"></div>}
-                {error && <div className="error">{error}</div>}
                 {courses.map((course) => (
                     <CoursesItem course={course} key={course.id} />
                 ))}

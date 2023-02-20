@@ -46,12 +46,34 @@
   }
 }
 .loader {
+
+}
+.loader::after {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  margin-top: -21px;
+  margin-left: -21px;
   border: 6px solid #f3f3f3;
   border-top: 6px solid #2963ff;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   animation: spin 1s linear infinite;
+}
+.loader::before {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 @keyframes spin {
   0% {
@@ -86,7 +108,7 @@
   display: block;
   margin: auto;
   position: absolute;
-  z-index: 9999;
+  z-index: 9;
   top: 0; 
   right: 0;
   width: fit-content;
@@ -126,7 +148,7 @@
   }
   .main-content-lesson {
     box-shadow: -40px 6px 40px -60px #999, 40px 6px 40px -60px #999;
-    padding: 60px 30px;
+    padding: 50px 30px;
   }
 }
 @media (min-width: 1024px) {
