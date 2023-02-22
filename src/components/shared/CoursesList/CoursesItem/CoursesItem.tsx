@@ -1,11 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import {ICourse} from '@src/redux/reducers/courses/courses.model';
 import {
     NUMBER_DECLINATIONS_TEMPLATES,
     numberDeclination,
 } from '@src/utils/numberDeclination';
+
+import {KohanaLink} from '@components/shared/KohanaLink/KohanaLink';
 
 import classes from './CoursesItem.module.scss';
 
@@ -18,7 +19,7 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
 
     return (
         <div className={classes.listItem}>
-            <Link to={`/courses/${course.id}`}>
+            <KohanaLink isLink={isActiveCourse} link={`/courses/${course.id}`}>
                 <div
                     className={`${classes.listItemInner} ${
                         !isActiveCourse && 'inactive'
@@ -52,7 +53,7 @@ export const CoursesItem = ({course}: CoursesItemProps) => {
                         </div>
                     </div>
                 </div>
-            </Link>
+            </KohanaLink>
         </div>
     );
 };
