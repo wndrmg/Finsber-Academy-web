@@ -4,8 +4,10 @@ declare namespace ContentBlockModuleScssNamespace {
     export interface IContentBlockModuleScss {
         active: string;
         blockBanner: string;
+        blockImage: string;
         contentBlock: string;
         contentBlockTest: string;
+        smallGrayText: string;
     }
 }
 

@@ -32,9 +32,21 @@ export const LessonPage = () => {
                             currentCourseId={currentCourse.id}
                             isLessonPage={true}
                         />
-                        {currentLesson.blocks.map((block, index) => (
-                            <ContentBlock block={block} key={index} />
-                        ))}
+                        {currentLesson.blocks.map((block, index) => {
+                            const isTestBlock = block.find(
+                                (elem) =>
+                                    elem.type === 'TEST' ||
+                                    elem.type === 'TEST_CHECKBOX',
+                            );
+                            const blockType = isTestBlock ? 'test' : 'other';
+                            return (
+                                <ContentBlock
+                                    block={block}
+                                    blockType={blockType}
+                                    key={index}
+                                />
+                            );
+                        })}
                     </>
                 )}
             </div>

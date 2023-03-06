@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: column;
     row-gap: .5rem;
-    margin: 1rem;
+    margin: 1rem 0 0 0;
   }
 
   form label {
@@ -107,6 +107,19 @@
     margin: 0 1rem 0 0;
     width: 16px;
   }
+
+  .small-gray-text {
+    color: #737475;
+    line-height: 16px;
+  }
+
+  .block-image {
+    img {
+      width: 100%;
+      margin: 0 0 1.2rem;
+    }
+  }
+
   .block-banner {
     display: flex;
     gap: 16px;
@@ -143,6 +156,22 @@
 }
 
 .content-block-test {
-  border: 1px solid #737475;
-  padding: 15px;
+  border: 1px solid #b6b6b6;
+  border-radius: 6px;
+  padding: 30px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    background: url(~@images/test-question.svg) no-repeat bottom right;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 8px;
+    bottom: -74px;
+    left: 0;
+    opacity: 0.15;
+    transform: rotate(-12deg);
+  }
 }

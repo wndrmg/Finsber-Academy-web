@@ -52,7 +52,7 @@
   content: '';
   display: block;
   position: fixed;
-  z-index: 11;
+  z-index: 101;
   top: 50%;
   left: 50%;
   margin-top: -21px;
@@ -68,12 +68,12 @@
   content: '';
   display: block;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 @keyframes spin {
   0% {
@@ -108,7 +108,7 @@
   display: block;
   margin: auto;
   position: absolute;
-  z-index: 9;
+  z-index: 90;
   top: 0; 
   right: 0;
   width: fit-content;

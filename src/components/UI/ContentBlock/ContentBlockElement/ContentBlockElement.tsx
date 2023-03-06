@@ -13,6 +13,20 @@ export const ContentBlockElement = ({elem}: BlockElementProps) => {
     if (elem.type === 'TEXT') return <p>{elem.text}</p>;
     if (elem.type === 'H1') return <h2>{elem.text}</h2>;
     if (elem.type === 'H2') return <h3>{elem.text}</h3>;
+    if (elem.type === 'SMALL_GRAY_TEXT')
+        return <p className={classes.smallGrayText}>{elem.text}</p>;
+    if (elem.type === 'TEXT_BOLD')
+        return (
+            <p>
+                <strong>{elem.text}</strong>
+            </p>
+        );
+    if (elem.type === 'IMG')
+        return (
+            <div className={classes.blockImage}>
+                <img src={`https://finsber.com/cdn/img/${elem.img}`} alt={''} />
+            </div>
+        );
     if (elem.type === 'LINK')
         return (
             <a

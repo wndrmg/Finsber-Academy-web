@@ -45,7 +45,8 @@ export interface ILesson {
 }
 
 export interface IBlock {
-    type: string;
+    // eslint-disable-next-line
+    type: 'H1' | 'H2' | 'BR' | 'TEXT' | 'LI' | 'TEST' | 'TEST_CHECKBOX' | 'LINK' | 'IMG' | 'SMALL_GRAY_TEXT' | 'TEXT_BOLD';
     text?: string;
     title?: string;
     img?: string;
