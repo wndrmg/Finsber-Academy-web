@@ -1,0 +1,1 @@
+export {coursesCase} from './coursesCase';

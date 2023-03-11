@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import {ILesson} from '@src/redux/reducers/courses/courses.model';
+import {LessonType} from '@src/redux/courses/courses.model';
 
 import classes from './LessonsItem.module.scss';
 
 interface LessonsItemItemProps {
-    lesson: ILesson;
+    lesson: LessonType;
     currentCourseId: string;
     isLessonPage: boolean;
 }

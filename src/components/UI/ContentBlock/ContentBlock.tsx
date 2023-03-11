@@ -1,13 +1,13 @@
 import React, {ReactElement} from 'react';
 
-import {IBlock} from '@src/redux/reducers/courses/courses.model';
+import {ContentBlockType} from '@src/redux/courses/courses.model';
 
 import {ContentBlockElement} from '@components/UI/ContentBlock/ContentBlockElement/ContentBlockElement';
 
 import classes from './ContentBlock.module.scss';
 
 interface BlockProps {
-    block: IBlock[];
+    block: ContentBlockType[];
     blockType: string;
     key: number;
 }

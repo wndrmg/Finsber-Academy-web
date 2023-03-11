@@ -2,10 +2,10 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 
-import {selectCoursesSelector} from '@src/redux/reducers/courses/courses.selector';
 
 import {LessonsList} from '@components/shared/LessonsList/LessonsList';
 import {PageHero, PageHeroDataType} from '@components/shared/PageHero/PageHero';
+import { selectCoursesSelector } from '@src/redux/courses/courses.selector';
 
 export const CoursePage = () => {
     const courses = useSelector(selectCoursesSelector);

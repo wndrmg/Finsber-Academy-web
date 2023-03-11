@@ -2,10 +2,9 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {Link, useParams} from 'react-router-dom';
 
-import {selectCoursesSelector} from '@src/redux/reducers/courses/courses.selector';
-
 import {LessonsItem} from '@components/shared/LessonsList/LessonsItem/LessonsItem';
 import {ContentBlock} from '@components/UI/ContentBlock/ContentBlock';
+import { selectCoursesSelector } from '@src/redux/courses/courses.selector';
 
 export const LessonPage = () => {
     const courses = useSelector(selectCoursesSelector);

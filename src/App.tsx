@@ -3,7 +3,6 @@ import './App.scss';
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-import {useCourses} from '@src/hooks/useCourses/useCourses';
 import {UseScrollToTop} from '@src/hooks/useScrollToTop/useScrollToTop';
 import {AllCoursesPage} from '@src/pages/AllCoursesPage';
 import {CoursePage} from '@src/pages/CoursePage';
@@ -12,13 +11,14 @@ import {MainPage} from '@src/pages/MainPage';
 
 import {Footer} from '@components/shared/Footer/Footer';
 import {Header} from '@components/shared/Header/Header';
+import {InitHook} from '@src/hooks/InitHook';
 
 export const App = () => {
-    const {error, loading} = useCourses();
     return (
         <div className="App">
-            {loading && <div className="loader"></div>}
-            {error && <div className="error">{error}</div>}
+            <InitHook />
+            {/*{loading && <div className="loader"></div>}*/}
+            {/*{error && <div className="error">{error}</div>}*/}
             <BrowserRouter>
                 <UseScrollToTop />
                 <Header />

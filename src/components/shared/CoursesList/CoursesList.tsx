@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import {selectCoursesSelector} from '@src/redux/reducers/courses/courses.selector';
+import {selectCoursesSelector} from '@src/redux/courses/courses.selector';
 
 import {CoursesItem} from '@components/shared/CoursesList/CoursesItem/CoursesItem';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ICourse} from '@src/redux/reducers/courses/courses.model';
+import {CourseType} from '@src/redux/courses/courses.model';
 import {
     NUMBER_DECLINATIONS_TEMPLATES,
     numberDeclination,
@@ -11,7 +11,7 @@ import {KohanaLink} from '@components/shared/KohanaLink/KohanaLink';
 import classes from './CoursesItem.module.scss';
 
 interface CoursesItemProps {
-    course: ICourse;
+    course: CourseType;
 }
 
 export const CoursesItem = ({course}: CoursesItemProps) => {

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {ICourse} from '@src/redux/reducers/courses/courses.model';
+import {CourseType} from '@src/redux/courses/courses.model';
 
 import {LessonsItem} from '@components/shared/LessonsList/LessonsItem/LessonsItem';
 
 import classes from './LessonsList.module.scss';
 
 interface LessonsListProps {
-    currentCourse: ICourse;
+    currentCourse: CourseType;
 }
 
 export const LessonsList = ({currentCourse}: LessonsListProps) => {

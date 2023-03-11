@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {IBlock} from '@src/redux/reducers/courses/courses.model';
+import {ContentBlockType} from '@src/redux/courses/courses.model';
 
 import classes from '../ContentBlock.module.scss';
 
 interface BlockElementProps {
-    elem: IBlock;
+    elem: ContentBlockType;
 }
 export const ContentBlockElement = ({elem}: BlockElementProps) => {
     if (elem.type === 'LI') return null;

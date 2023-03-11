@@ -2,7 +2,7 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 import {AnyAction, applyMiddleware, combineReducers, createStore} from 'redux';
 import thunk, {ThunkAction, ThunkDispatch} from 'redux-thunk';
 
-import {coursesReducer as courses} from '@src/redux/reducers/courses/courses.reducer';
+import {coursesReducer as courses} from './courses/courses.reducer';
 
 const rootReducer = combineReducers({
     courses,
