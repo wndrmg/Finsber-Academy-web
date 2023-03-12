@@ -10,6 +10,10 @@ import classes from './CoursesList.module.scss';
 export const CoursesList = () => {
     const courses = useSelector(selectCoursesSelector);
 
+    if (!courses?.length) {
+        return <div className="loader"></div>;
+    }
+
     return (
         <div className={classes.coursesList}>
             <h2>Все курсы</h2>

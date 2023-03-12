@@ -17,8 +17,6 @@ export const App = () => {
     return (
         <div className="App">
             <InitHook />
-            {/*{loading && <div className="loader"></div>}*/}
-            {/*{error && <div className="error">{error}</div>}*/}
             <BrowserRouter>
                 <UseScrollToTop />
                 <Header />

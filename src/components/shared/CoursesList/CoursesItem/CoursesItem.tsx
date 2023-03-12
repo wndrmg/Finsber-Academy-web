@@ -9,6 +9,7 @@ import {
 import {KohanaLink} from '@components/shared/KohanaLink/KohanaLink';
 
 import classes from './CoursesItem.module.scss';
+import { getCourseLogo } from '@src/utils/getUrl';
 
 interface CoursesItemProps {
     course: CourseType;
@@ -17,23 +18,18 @@ interface CoursesItemProps {
 export const CoursesItem = ({course}: CoursesItemProps) => {
     const isActiveCourse = course.lessons.length > 0;
 
+    const imageUrl = getCourseLogo(course.id);
+
     return (
         <div className={classes.listItem}>
             <KohanaLink isLink={isActiveCourse} link={`/courses/${course.id}`}>
                 <div
                     className={`${classes.listItemInner} ${
-                        !isActiveCourse && 'inactive'
+                        !isActiveCourse && classes.inactive
                     }`}
                 >
-                    <div
-                        className={classes.itemCover}
-                        style={{
-                            backgroundImage:
-                                'url(' + 'covers/personal-finance.svg' + ')',
-                            backgroundPosition: 'center, bottom',
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
+                    <div className={classes.itemCover} style={{backgroundColor: course.color}}>
+                        <img src={imageUrl} alt={course.title}/>
                         <div className="item-badge">
                             <span>{course.level}</span>
                         </div>

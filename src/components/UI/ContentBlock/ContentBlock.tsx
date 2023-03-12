@@ -5,13 +5,14 @@ import {ContentBlockType} from '@src/redux/courses/courses.model';
 import {ContentBlockElement} from '@components/UI/ContentBlock/ContentBlockElement/ContentBlockElement';
 
 import classes from './ContentBlock.module.scss';
+import {RadioButtonTest} from '@components/UI/ContentBlock/RadioButtonTest/RadioButtonTest';
 
 interface BlockProps {
     block: ContentBlockType[];
     blockType: string;
-    key: number;
+    blockIndex: number;
 }
-export const ContentBlock = ({block, blockType}: BlockProps) => {
+export const ContentBlock = ({block, blockType, blockIndex}: BlockProps) => {
     const liArr: ReactElement[] = [];
     const radioArr: ReactElement[] = [];
     const checkboxArr: ReactElement[] = [];
@@ -28,44 +29,40 @@ export const ContentBlock = ({block, blockType}: BlockProps) => {
             : classes.contentBlock;
 
     return (
-        <div className={blockClassName}>
-            {block.map((elem, index) => {
+        <div key={blockIndex} className={blockClassName}>
+            {block.map((elem, _index) => {
+
+                const key = (elem.text || elem.type + '' + _index).slice(0, 30);
+
                 if (elem.type === 'LI') {
-                    liArr.push(<li key={elem.text}>{elem.text}</li>);
+                    liArr.push(<li key={key}>{elem.text}</li>);
                     if (liArr.length === liNumberInBlock) {
-                        return <ul key={index}>{liArr}</ul>;
+                        return <ul key={key}>{liArr}</ul>;
                     }
                 }
+
                 if (elem.type === 'TEST') {
-                    radioArr.push(
-                        <label key={elem.text}>
-                            <input
-                                name="test"
-                                type="radio"
-                                value={`${elem.isTestTrue}`}
-                            />
-                            {elem.text}
-                        </label>,
-                    );
+                    radioArr.push(<RadioButtonTest blockIndex={blockIndex} key={key} content={elem}/>);
                     if (radioArr.length === radioNumberInBlock) {
-                        return <form key={index}>{radioArr}</form>;
+                        return <form key={key}>{radioArr}</form>;
                     }
                 }
+
                 if (elem.type === 'TEST_CHECKBOX') {
                     checkboxArr.push(
-                        <label key={elem.text}>
+                        <label key={key}>
                             <input
                                 name="test"
                                 type="checkbox"
-                                value={`${elem.isTestTrue}`}
+                                value={elem.text}
                             />
                             {elem.text}
                         </label>,
                     );
                     if (checkboxArr.length === checkboxNumberInBlock)
-                        return <form key={index}>{checkboxArr}</form>;
+                        return <form key={key}>{checkboxArr}</form>;
                 }
-                return <ContentBlockElement elem={elem} key={index} />;
+                return <ContentBlockElement elem={elem} key={key} />;
             })}
         </div>
     );

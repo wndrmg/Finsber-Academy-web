@@ -2,6 +2,7 @@
 // Please do not change this file!
 declare namespace CoursesItemModuleScssNamespace {
     export interface ICoursesItemModuleScss {
+        inactive: string;
         itemCover: string;
         itemDescription: string;
         itemLessonsNumber: string;

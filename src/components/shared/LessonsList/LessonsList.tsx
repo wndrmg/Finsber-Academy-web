@@ -22,6 +22,7 @@ export const LessonsList = ({currentCourse}: LessonsListProps) => {
                             key={lesson.id}
                             currentCourseId={currentCourse.id}
                             isLessonPage={false}
+                            imageBackgroundColor={currentCourse.color}
                         />
                     ))
                 ) : (

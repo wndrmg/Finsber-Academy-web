@@ -6,6 +6,12 @@
     box-shadow: 0 3px 15px #f0f0f0;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    &:not(.inactive):hover {
+      box-shadow: -5px 5px 20px #b6b6b6;
+      translate: 3px -3px;
+    }
 
     h3 {
       margin: 0;
@@ -15,13 +21,19 @@
     .item-cover {
       position: relative;
       display: flex;
-      flex-basis: 60%;
+      flex-basis: 65%;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 150px;
+      }
     }
 
     .item-description {
       display: flex;
       flex-direction: column;
-      flex-basis: 40%;
+      flex-basis: 35%;
       justify-content: space-between;
       padding: 20px;
 
@@ -29,5 +41,35 @@
         font-size: 15px;
       }
     }
+  }
+  .inactive {
+    position: relative;
+    box-shadow:inset 0 0 0 1px #e3e3e3 !important;
+  }
+  .inactive::before {
+    content: 'Скоро';
+    display: block;
+    margin: auto;
+    position: absolute;
+    z-index: 90;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    background: #c1ff25;
+    padding: 10px 20px;
+    line-height: 16px;
+    border-radius: 0 6px 0 0;
+    color: rgb(60, 60, 60);
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .inactive::after {
+    position: absolute;
+    content: '';
+    //background: rgba(255, 255, 255, 0.6);
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

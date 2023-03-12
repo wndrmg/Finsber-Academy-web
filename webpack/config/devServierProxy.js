@@ -20,6 +20,11 @@ export const devServerProxyConfig = {
         changeOrigin: true,
         secure: false,
     },
+    '/cdn/': {
+        target: `https://finsber.com/`,
+        changeOrigin: true,
+        secure: false,
+    },
     // '/ws/v1': {
     //     target: 'http://localhost:1234',
     //     ws: true,

@@ -4,34 +4,31 @@ import {Link} from 'react-router-dom';
 import {LessonType} from '@src/redux/courses/courses.model';
 
 import classes from './LessonsItem.module.scss';
+import { getLessonLogo } from '@src/utils/getUrl';
 
 interface LessonsItemItemProps {
     lesson: LessonType;
     currentCourseId: string;
     isLessonPage: boolean;
+    imageBackgroundColor: string;
 }
 
 export const LessonsItem = ({
     lesson,
     currentCourseId,
-    isLessonPage,
+    isLessonPage, imageBackgroundColor,
 }: LessonsItemItemProps) => {
+
+    const imageUrl = getLessonLogo(currentCourseId, lesson.id);
+
     if (!isLessonPage) {
         return (
             <div className={classes.listItem}>
                 <Link to={`/courses/${currentCourseId}/lessons/${lesson.id}`}>
                     <div className={classes.listItemInner}>
-                        <div
-                            className={classes.itemCover}
-                            style={{
-                                backgroundImage:
-                                    'url(' +
-                                    'covers/personal-finance.svg' +
-                                    ')',
-                                backgroundPosition: 'center, bottom',
-                                backgroundRepeat: 'no-repeat',
-                            }}
-                        ></div>
+                        <div className={classes.itemCover} style={{backgroundColor: imageBackgroundColor}}>
+                            <img src={imageUrl} alt={lesson.title}/>
+                        </div>
                         <div className={classes.itemDescription}>
                             <h3>{lesson.title}</h3>
                             <div className={classes.itemLessonsNumber}>
@@ -47,15 +44,9 @@ export const LessonsItem = ({
         return (
             <div className={`${classes.listItem} ${classes.listItemLesson}`}>
                 <div className={classes.listItemInner}>
-                    <div
-                        className={classes.itemCover}
-                        style={{
-                            backgroundImage:
-                                'url(' + 'covers/personal-finance.svg' + ')',
-                            backgroundPosition: 'center, bottom',
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    ></div>
+                    <div className={classes.itemCover}>
+                        <img src={imageUrl} alt={lesson.title}/>
+                    </div>
                     <div className={classes.itemDescription}>
                         <h3>{lesson.title}</h3>
                         <div className={classes.itemLessonsNumber}>

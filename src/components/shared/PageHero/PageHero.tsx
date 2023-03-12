@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {ReactSVG} from 'react-svg';
 
 import {
     NUMBER_DECLINATIONS_TEMPLATES,
@@ -40,10 +39,9 @@ export const PageHero = ({pageHeroData, isMainPage}: PageHeroProps) => {
                     </div>
                 )}
                 <h1>{pageHeroData.pageHeroH1}</h1>
-                <ReactSVG
-                    className={classes.pageHeroPic}
-                    src={pageHeroData.pageHeroImg}
-                />
+                <div className={classes.pageHeroPic}>
+                    <img src={pageHeroData.pageHeroImg} alt={pageHeroData.pageHeroH1}/>
+                </div>
                 <p
                     className={
                         !isMainPage ? 'page-hero-course' : classes.pageHeroMain

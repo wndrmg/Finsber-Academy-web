@@ -3,8 +3,8 @@ import {AnyAction} from 'redux';
 import {ThunkAction} from 'redux-thunk';
 
 import {asyncCache} from '@src/utils/asyncCache';
-import {RootState} from '../../../store';
-import {coursesActions} from '../../courses.actions';
+import {RootState} from '@src/redux/store';
+import {coursesActions} from '@src/redux/courses/courses.actions';
 
 let abortControllerUpdateConfig = new AbortController();
 export const updateConfig =

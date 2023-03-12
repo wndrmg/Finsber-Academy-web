@@ -10,8 +10,8 @@
     box-shadow: 0 3px 15px #f0f0f0;
     display: flex;
     flex-direction: row;
-    height: auto;
-    min-height: 130px;
+    height: 130px;
+    overflow: hidden;
 
     h3 {
       font-size: 16px;
@@ -21,28 +21,22 @@
     .item-cover {
       position: relative;
       display: flex;
-      flex-basis: 40%;
 
-      @media (min-width: 768px) {
-        flex-basis: 25%;
+      img {
+        height: 131px;
       }
     }
 
     .item-description {
       display: flex;
       flex-direction: column;
-      flex-basis: 60%;
       justify-content: space-between;
       padding: 20px;
 
       .item-lessons-number {
         font-size: 15px;
+        color: #737475;
       }
-
-      @media (min-width: 768px) {
-        flex-basis: 75%;
-      }
-
     }
   }
 }

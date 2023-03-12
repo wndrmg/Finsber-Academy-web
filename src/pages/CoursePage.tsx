@@ -6,22 +6,33 @@ import {useParams} from 'react-router-dom';
 import {LessonsList} from '@components/shared/LessonsList/LessonsList';
 import {PageHero, PageHeroDataType} from '@components/shared/PageHero/PageHero';
 import { selectCoursesSelector } from '@src/redux/courses/courses.selector';
+import { getCourseLogo } from '@src/utils/getUrl';
 
 export const CoursePage = () => {
     const courses = useSelector(selectCoursesSelector);
     const urlParams = useParams();
-    const currentCourse = courses.find(
+    const currentCourse = courses?.find(
         (course) => course.id === urlParams.courseId,
     );
 
+    if (!courses?.length) {
+        return <div className="loader"></div>;
+    }
+
+    if (!currentCourse) {
+        return <>ERROR</>;
+    }
+
+    const imageUrl = getCourseLogo(currentCourse.id);
+
     const pageHeroData: PageHeroDataType = {
-        pageHeroH1: currentCourse?.title,
-        pageHeroP: currentCourse?.description,
-        pageHeroButtonLink: `/courses/${currentCourse?.id}/lessons/0`,
+        pageHeroH1: currentCourse.title,
+        pageHeroP: currentCourse.description,
+        pageHeroButtonLink: `/courses/${currentCourse.id}/lessons/0`,
         pageHeroButtonText: 'Начать обучение',
-        pageHeroImg: 'covers/personal-finance.svg',
-        pageHeroLessonsNumber: currentCourse?.lessons.length,
-        pageHeroLevel: currentCourse?.level,
+        pageHeroImg: imageUrl,
+        pageHeroLessonsNumber: currentCourse.lessons.length,
+        pageHeroLevel: currentCourse.level,
     };
 
     return (
